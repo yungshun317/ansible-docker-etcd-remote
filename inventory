@@ -1,0 +1,14 @@
+[etcd1]
+10.236.1.1
+
+[etcd2]
+10.236.1.2
+
+[ccma:children]
+etcd1
+etcd2
+
+[ccma:vars]
+ansible_connection = ssh
+ansible_user = ccma
+ansible_ssh_pass = ccma
