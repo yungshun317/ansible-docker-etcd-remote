@@ -34,3 +34,24 @@
       vars:
         packages:
           - docker
+
+    - name: Add ccma to the docker group
+      become: yes
+      shell: usermod -aG docker ccma
+      register: ccma_to_docker
+
+    - name: Reboot immediately if there was a change
+      shell: "sleep 5 && reboot"
+      async: 1
+      poll: 0
+      when: ccma_to_docker is changed
+
+    - name: Wait for the reboot to complete if there was a change
+      wait_for_connectin:
+        connect_timeout: 20
+        sleep: 5
+        delay: 5
+        timeout: 300
+      when: ccma_to_docker is changed
+
+    - name: 
