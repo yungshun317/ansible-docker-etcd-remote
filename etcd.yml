@@ -1,0 +1,36 @@
+---
+- name: etcd
+  hosts: ccma
+  gather_facts: no
+
+  vars:
+    ansible_become_pass: "ccma"
+
+  tasks:
+    - name: Install Python 2.7
+      become: yes
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+      changed_when: False
+
+    - name: Gather facts after Python is definitely present
+      become: yes
+      setup:
+
+    - name: Install pip and docker.io
+      become: yes
+      apt:
+        name: "{{ packages }}"
+        state: present
+      vars:
+        packages:
+          - python-pip
+          - docker.io
+
+    - name: Install Docker Python library
+      become: yes
+      pip:
+        name: "{{ packages }}"
+        state: present
+      vars:
+        packages:
+          - docker
