@@ -1,5 +1,5 @@
 ---
-- name: etcd
+- name: etcd-cluster
   hosts: ccma
   gather_facts: no
 
@@ -72,7 +72,6 @@
       with_items:
         - "nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://{{ ansible_default_ipv4.address }}:2379 --cluster-advertise={{ ansible_default_ipv4.address }}:2375 >/dev/null 2>&1 &"
 
-
     - name: Create a directory for mounting host volume
       file:
         path: /home/ccma/etcd
@@ -126,7 +125,6 @@
     - name: Debug run_etcd_cluster
       debug:
         var: run_etcd_cluster
-
 
 - name: etcd1
   hosts: etcd1
