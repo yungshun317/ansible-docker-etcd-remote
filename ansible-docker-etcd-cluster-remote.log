@@ -90414,3 +90414,3395 @@ The offending line appears to be:
 2018-11-01 11:23:42,825 p=6853 u=yungshun |  10.236.1.1                 : ok=15   changed=6    unreachable=0    failed=0   
 2018-11-01 11:23:42,825 p=6853 u=yungshun |  10.236.1.2                 : ok=15   changed=6    unreachable=0    failed=0   
 2018-11-01 11:23:42,826 p=6853 u=yungshun |  10.236.1.3                 : ok=15   changed=6    unreachable=0    failed=0   
+2018-11-01 11:30:26,555 p=7560 u=yungshun |  PLAY [etcd] ********************************************************************
+2018-11-01 11:30:26,566 p=7560 u=yungshun |  TASK [Install Python 2.7] ******************************************************
+2018-11-01 11:30:27,962 p=7560 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 11:30:27,964 p=7560 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 11:30:27,993 p=7560 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 11:30:28,004 p=7560 u=yungshun |  TASK [Gather facts after Python is definitely present] *************************
+2018-11-01 11:30:29,492 p=7560 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 11:30:29,535 p=7560 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 11:30:29,623 p=7560 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 11:30:29,693 p=7560 u=yungshun |  TASK [Install pip and docker.io] ***********************************************
+2018-11-01 11:30:31,490 p=7560 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 11:30:31,565 p=7560 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 11:30:31,587 p=7560 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 11:30:31,656 p=7560 u=yungshun |  TASK [Install Docker Python library] *******************************************
+2018-11-01 11:30:33,411 p=7560 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 11:30:33,411 p=7560 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 11:30:33,460 p=7560 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 11:30:33,535 p=7560 u=yungshun |  TASK [Add ccma to the docker group] ********************************************
+2018-11-01 11:30:34,526 p=7560 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 11:30:34,538 p=7560 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 11:30:34,543 p=7560 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 11:30:34,621 p=7560 u=yungshun |  TASK [Reboot immediately if there was a change] ********************************
+2018-11-01 11:30:36,198 p=7560 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 11:30:36,359 p=7560 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 11:30:36,544 p=7560 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 11:30:36,616 p=7560 u=yungshun |  TASK [Wait for the reboot to complete if there was a change] *******************
+2018-11-01 11:30:43,394 p=7560 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 11:30:43,394 p=7560 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 11:30:43,395 p=7560 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 11:30:43,487 p=7560 u=yungshun |  TASK [Install pexpect] *********************************************************
+2018-11-01 11:30:44,830 p=7560 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 11:30:45,022 p=7560 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 11:30:45,041 p=7560 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 11:30:45,115 p=7560 u=yungshun |  TASK [Stop Docker engine] ******************************************************
+2018-11-01 11:30:46,173 p=7560 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 11:30:46,204 p=7560 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 11:30:46,213 p=7560 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 11:30:46,291 p=7560 u=yungshun |  TASK [Restart Docker engine with cluster configuration] ************************
+2018-11-01 11:30:46,806 p=7560 u=yungshun |  changed: [10.236.1.1] => (item=nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://10.236.1.1:2379 --cluster-advertise=10.236.1.1:2375 >/dev/null 2>&1 &)
+2018-11-01 11:30:46,960 p=7560 u=yungshun |  changed: [10.236.1.2] => (item=nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://10.236.1.2:2379 --cluster-advertise=10.236.1.2:2375 >/dev/null 2>&1 &)
+2018-11-01 11:30:47,120 p=7560 u=yungshun |  changed: [10.236.1.3] => (item=nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://10.236.1.3:2379 --cluster-advertise=10.236.1.3:2375 >/dev/null 2>&1 &)
+2018-11-01 11:30:47,191 p=7560 u=yungshun |  TASK [Create a network] ********************************************************
+2018-11-01 11:30:47,730 p=7560 u=yungshun |  fatal: [10.236.1.1]: FAILED! => {"changed": true, "cmd": "docker network create -d overlay network_etcd", "delta": "0:00:00.071339", "end": "2018-11-01 11:30:47.638479", "msg": "non-zero return code", "rc": 1, "start": "2018-11-01 11:30:47.567140", "stderr": "Error response from daemon: network with name network_etcd already exists", "stderr_lines": ["Error response from daemon: network with name network_etcd already exists"], "stdout": "", "stdout_lines": []}
+2018-11-01 11:30:47,834 p=7560 u=yungshun |  fatal: [10.236.1.2]: FAILED! => {"changed": true, "cmd": "docker network create -d overlay network_etcd", "delta": "0:00:00.066443", "end": "2018-11-01 11:30:47.747608", "msg": "non-zero return code", "rc": 1, "start": "2018-11-01 11:30:47.681165", "stderr": "Error response from daemon: network with name network_etcd already exists", "stderr_lines": ["Error response from daemon: network with name network_etcd already exists"], "stdout": "", "stdout_lines": []}
+2018-11-01 11:30:47,940 p=7560 u=yungshun |  fatal: [10.236.1.3]: FAILED! => {"changed": true, "cmd": "docker network create -d overlay network_etcd", "delta": "0:00:00.049763", "end": "2018-11-01 11:30:47.856779", "msg": "non-zero return code", "rc": 1, "start": "2018-11-01 11:30:47.807016", "stderr": "Error response from daemon: network with name network_etcd already exists", "stderr_lines": ["Error response from daemon: network with name network_etcd already exists"], "stdout": "", "stdout_lines": []}
+2018-11-01 11:30:47,941 p=7560 u=yungshun |  	to retry, use: --limit @/home/yungshun/workspace/ansible/ansible-docker-etcd-cluster-remote/etcd-cluster.retry
+
+2018-11-01 11:30:47,941 p=7560 u=yungshun |  PLAY RECAP *********************************************************************
+2018-11-01 11:30:47,942 p=7560 u=yungshun |  10.236.1.1                 : ok=10   changed=4    unreachable=0    failed=1   
+2018-11-01 11:30:47,942 p=7560 u=yungshun |  10.236.1.2                 : ok=10   changed=4    unreachable=0    failed=1   
+2018-11-01 11:30:47,942 p=7560 u=yungshun |  10.236.1.3                 : ok=10   changed=4    unreachable=0    failed=1   
+2018-11-01 11:31:48,969 p=8093 u=yungshun |  PLAY [etcd] ********************************************************************
+2018-11-01 11:31:48,980 p=8093 u=yungshun |  TASK [Install Python 2.7] ******************************************************
+2018-11-01 11:31:50,336 p=8093 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 11:31:50,363 p=8093 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 11:31:50,396 p=8093 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 11:31:50,407 p=8093 u=yungshun |  TASK [Gather facts after Python is definitely present] *************************
+2018-11-01 11:31:51,631 p=8093 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 11:31:51,714 p=8093 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 11:31:51,787 p=8093 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 11:31:51,855 p=8093 u=yungshun |  TASK [Install pip and docker.io] ***********************************************
+2018-11-01 11:31:53,297 p=8093 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 11:31:53,332 p=8093 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 11:31:53,343 p=8093 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 11:31:53,415 p=8093 u=yungshun |  TASK [Install Docker Python library] *******************************************
+2018-11-01 11:31:55,106 p=8093 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 11:31:55,116 p=8093 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 11:31:55,133 p=8093 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 11:31:55,197 p=8093 u=yungshun |  TASK [Add ccma to the docker group] ********************************************
+2018-11-01 11:31:56,034 p=8093 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 11:31:56,040 p=8093 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 11:31:56,049 p=8093 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 11:31:56,124 p=8093 u=yungshun |  TASK [Reboot immediately if there was a change] ********************************
+2018-11-01 11:31:57,642 p=8093 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 11:31:57,731 p=8093 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 11:31:57,903 p=8093 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 11:31:57,963 p=8093 u=yungshun |  TASK [Wait for the reboot to complete if there was a change] *******************
+2018-11-01 11:32:04,692 p=8093 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 11:32:04,693 p=8093 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 11:32:04,697 p=8093 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 11:32:04,768 p=8093 u=yungshun |  TASK [Install pexpect] *********************************************************
+2018-11-01 11:32:06,086 p=8093 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 11:32:06,162 p=8093 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 11:32:06,263 p=8093 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 11:32:06,332 p=8093 u=yungshun |  TASK [Stop Docker engine] ******************************************************
+2018-11-01 11:32:07,280 p=8093 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 11:32:07,300 p=8093 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 11:32:07,316 p=8093 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 11:32:07,391 p=8093 u=yungshun |  TASK [Restart Docker engine with cluster configuration] ************************
+2018-11-01 11:32:07,876 p=8093 u=yungshun |  changed: [10.236.1.1] => (item=nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://10.236.1.1:2379 --cluster-advertise=10.236.1.1:2375 >/dev/null 2>&1 &)
+2018-11-01 11:32:07,996 p=8093 u=yungshun |  changed: [10.236.1.2] => (item=nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://10.236.1.2:2379 --cluster-advertise=10.236.1.2:2375 >/dev/null 2>&1 &)
+2018-11-01 11:32:08,098 p=8093 u=yungshun |  changed: [10.236.1.3] => (item=nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://10.236.1.3:2379 --cluster-advertise=10.236.1.3:2375 >/dev/null 2>&1 &)
+2018-11-01 11:32:08,163 p=8093 u=yungshun |  TASK [Create a network] ********************************************************
+2018-11-01 11:32:08,970 p=8093 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 11:32:09,441 p=8093 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 11:32:09,540 p=8093 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 11:32:09,607 p=8093 u=yungshun |  TASK [Create a directory for mounting host volume] *****************************
+2018-11-01 11:32:10,318 p=8093 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 11:32:10,321 p=8093 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 11:32:10,327 p=8093 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 11:32:10,399 p=8093 u=yungshun |  TASK [Check for containers that actually exist] ********************************
+2018-11-01 11:32:10,897 p=8093 u=yungshun |  changed: [10.236.1.1] => (item=etcd)
+2018-11-01 11:32:11,005 p=8093 u=yungshun |  changed: [10.236.1.2] => (item=etcd)
+2018-11-01 11:32:11,107 p=8093 u=yungshun |  changed: [10.236.1.3] => (item=etcd)
+2018-11-01 11:32:11,175 p=8093 u=yungshun |  TASK [Remove the containers found by the above command] ************************
+2018-11-01 11:32:12,313 p=8093 u=yungshun |  changed: [10.236.1.2] => (item={'_ansible_parsed': True, 'stderr_lines': [], u'changed': True, u'stdout': u'61b0b4c6c79a', '_ansible_item_result': True, u'delta': u'0:00:00.016509', 'stdout_lines': [u'61b0b4c6c79a'], '_ansible_item_label': u'etcd', u'end': u'2018-11-01 11:32:10.916894', '_ansible_no_log': False, 'failed': False, u'cmd': u'docker ps -aq --filter "name=etcd"', 'item': u'etcd', u'stderr': u'', u'rc': 0, u'invocation': {u'module_args': {u'warn': True, u'executable': None, u'_uses_shell': True, u'_raw_params': u'docker ps -aq --filter "name=etcd"', u'removes': None, u'argv': None, u'creates': None, u'chdir': None, u'stdin': None}}, u'start': u'2018-11-01 11:32:10.900385', '_ansible_ignore_errors': None})
+2018-11-01 11:32:12,352 p=8093 u=yungshun |  changed: [10.236.1.1] => (item={'_ansible_parsed': True, 'stderr_lines': [], u'changed': True, u'stdout': u'd4980b1af6fd', '_ansible_item_result': True, u'delta': u'0:00:00.018132', 'stdout_lines': [u'd4980b1af6fd'], '_ansible_item_label': u'etcd', u'end': u'2018-11-01 11:32:10.802867', '_ansible_no_log': False, 'failed': False, u'cmd': u'docker ps -aq --filter "name=etcd"', 'item': u'etcd', u'stderr': u'', u'rc': 0, u'invocation': {u'module_args': {u'warn': True, u'executable': None, u'_uses_shell': True, u'_raw_params': u'docker ps -aq --filter "name=etcd"', u'removes': None, u'argv': None, u'creates': None, u'chdir': None, u'stdin': None}}, u'start': u'2018-11-01 11:32:10.784735', '_ansible_ignore_errors': None})
+2018-11-01 11:32:12,452 p=8093 u=yungshun |  changed: [10.236.1.3] => (item={'_ansible_parsed': True, 'stderr_lines': [], u'changed': True, u'stdout': u'629ce9110dae', '_ansible_item_result': True, u'delta': u'0:00:00.014000', 'stdout_lines': [u'629ce9110dae'], '_ansible_item_label': u'etcd', u'end': u'2018-11-01 11:32:11.024137', '_ansible_no_log': False, 'failed': False, u'cmd': u'docker ps -aq --filter "name=etcd"', 'item': u'etcd', u'stderr': u'', u'rc': 0, u'invocation': {u'module_args': {u'warn': True, u'executable': None, u'_uses_shell': True, u'_raw_params': u'docker ps -aq --filter "name=etcd"', u'removes': None, u'argv': None, u'creates': None, u'chdir': None, u'stdin': None}}, u'start': u'2018-11-01 11:32:11.010137', '_ansible_ignore_errors': None})
+2018-11-01 11:32:12,527 p=8093 u=yungshun |  TASK [Debug] *******************************************************************
+2018-11-01 11:32:12,783 p=8093 u=yungshun |  ok: [10.236.1.1] => {
+    "hostvars[inventory_hostname]['etcd_name']": "etcd1"
+}
+2018-11-01 11:32:12,873 p=8093 u=yungshun |  ok: [10.236.1.2] => {
+    "hostvars[inventory_hostname]['etcd_name']": "etcd2"
+}
+2018-11-01 11:32:12,975 p=8093 u=yungshun |  ok: [10.236.1.3] => {
+    "hostvars[inventory_hostname]['etcd_name']": "etcd3"
+}
+2018-11-01 11:32:13,043 p=8093 u=yungshun |  TASK [Run a 3 node etcd cluster] ***********************************************
+2018-11-01 11:32:14,797 p=8093 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 11:32:38,093 p=8093 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 11:32:38,795 p=8093 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 11:32:38,875 p=8093 u=yungshun |  TASK [Debug run_etcd_cluster] **************************************************
+2018-11-01 11:32:39,202 p=8093 u=yungshun |  ok: [10.236.1.1] => {
+    "run_etcd_cluster": {
+        "ansible_facts": {
+            "docker_container": {
+                "AppArmorProfile": "", 
+                "Args": [
+                    "--data-dir=/etcd-data", 
+                    "--name", 
+                    "etcd1", 
+                    "--initial-advertise-peer-urls", 
+                    "http://10.236.1.1:2380", 
+                    "--listen-peer-urls", 
+                    "http://0.0.0.0:2380", 
+                    "--advertise-client-urls", 
+                    "http://10.236.1.1:2379", 
+                    "--listen-client-urls", 
+                    "http://0.0.0.0:2379", 
+                    "--initial-cluster", 
+                    "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                    "--initial-cluster-state", 
+                    "new", 
+                    "--initial-cluster-token", 
+                    "etcd-cluster"
+                ], 
+                "Config": {
+                    "AttachStderr": false, 
+                    "AttachStdin": false, 
+                    "AttachStdout": false, 
+                    "Cmd": [
+                        "/usr/local/bin/etcd", 
+                        "--data-dir=/etcd-data", 
+                        "--name", 
+                        "etcd1", 
+                        "--initial-advertise-peer-urls", 
+                        "http://10.236.1.1:2380", 
+                        "--listen-peer-urls", 
+                        "http://0.0.0.0:2380", 
+                        "--advertise-client-urls", 
+                        "http://10.236.1.1:2379", 
+                        "--listen-client-urls", 
+                        "http://0.0.0.0:2379", 
+                        "--initial-cluster", 
+                        "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                        "--initial-cluster-state", 
+                        "new", 
+                        "--initial-cluster-token", 
+                        "etcd-cluster"
+                    ], 
+                    "Domainname": "", 
+                    "Entrypoint": null, 
+                    "Env": [
+                        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+                    ], 
+                    "ExposedPorts": {
+                        "2379/tcp": {}, 
+                        "2380/tcp": {}
+                    }, 
+                    "Hostname": "7b26930bf367", 
+                    "Image": "gcr.io/etcd-development/etcd:latest", 
+                    "Labels": {}, 
+                    "OnBuild": null, 
+                    "OpenStdin": false, 
+                    "StdinOnce": false, 
+                    "Tty": false, 
+                    "User": "", 
+                    "Volumes": {
+                        "/etcd-data": {}
+                    }, 
+                    "WorkingDir": ""
+                }, 
+                "Created": "2018-11-01T03:32:14.049114717Z", 
+                "Driver": "aufs", 
+                "ExecIDs": null, 
+                "GraphDriver": {
+                    "Data": null, 
+                    "Name": "aufs"
+                }, 
+                "HostConfig": {
+                    "AutoRemove": false, 
+                    "Binds": [
+                        "/home/ccma/etcd:/etcd-data:rw"
+                    ], 
+                    "BlkioDeviceReadBps": null, 
+                    "BlkioDeviceReadIOps": null, 
+                    "BlkioDeviceWriteBps": null, 
+                    "BlkioDeviceWriteIOps": null, 
+                    "BlkioWeight": 0, 
+                    "BlkioWeightDevice": null, 
+                    "CapAdd": null, 
+                    "CapDrop": null, 
+                    "Cgroup": "", 
+                    "CgroupParent": "", 
+                    "ConsoleSize": [
+                        0, 
+                        0
+                    ], 
+                    "ContainerIDFile": "", 
+                    "CpuCount": 0, 
+                    "CpuPercent": 0, 
+                    "CpuPeriod": 0, 
+                    "CpuQuota": 0, 
+                    "CpuRealtimePeriod": 0, 
+                    "CpuRealtimeRuntime": 0, 
+                    "CpuShares": 0, 
+                    "CpusetCpus": "", 
+                    "CpusetMems": "", 
+                    "Devices": null, 
+                    "DiskQuota": 0, 
+                    "Dns": null, 
+                    "DnsOptions": null, 
+                    "DnsSearch": null, 
+                    "ExtraHosts": null, 
+                    "GroupAdd": null, 
+                    "IOMaximumBandwidth": 0, 
+                    "IOMaximumIOps": 0, 
+                    "Init": false, 
+                    "IpcMode": "", 
+                    "Isolation": "", 
+                    "KernelMemory": 0, 
+                    "Links": null, 
+                    "LogConfig": {
+                        "Config": {}, 
+                        "Type": "json-file"
+                    }, 
+                    "Memory": 0, 
+                    "MemoryReservation": 0, 
+                    "MemorySwap": 0, 
+                    "MemorySwappiness": -1, 
+                    "NanoCpus": 0, 
+                    "NetworkMode": "default", 
+                    "OomKillDisable": false, 
+                    "OomScoreAdj": 0, 
+                    "PidMode": "", 
+                    "PidsLimit": 0, 
+                    "PortBindings": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "Privileged": false, 
+                    "PublishAllPorts": false, 
+                    "ReadonlyRootfs": false, 
+                    "RestartPolicy": {
+                        "MaximumRetryCount": 0, 
+                        "Name": ""
+                    }, 
+                    "Runtime": "runc", 
+                    "SecurityOpt": null, 
+                    "ShmSize": 67108864, 
+                    "UTSMode": "", 
+                    "Ulimits": null, 
+                    "UsernsMode": "", 
+                    "VolumeDriver": "", 
+                    "VolumesFrom": null
+                }, 
+                "HostnamePath": "/var/lib/docker/containers/7b26930bf367fc0fd4ad390f6c852830fbf101db0261080b0d31ec7f56a6a943/hostname", 
+                "HostsPath": "/var/lib/docker/containers/7b26930bf367fc0fd4ad390f6c852830fbf101db0261080b0d31ec7f56a6a943/hosts", 
+                "Id": "7b26930bf367fc0fd4ad390f6c852830fbf101db0261080b0d31ec7f56a6a943", 
+                "Image": "sha256:643c21638c1c966fe18ca1cc8547dd401df70e85d83ca6de76b9a7957703b993", 
+                "LogPath": "/var/lib/docker/containers/7b26930bf367fc0fd4ad390f6c852830fbf101db0261080b0d31ec7f56a6a943/7b26930bf367fc0fd4ad390f6c852830fbf101db0261080b0d31ec7f56a6a943-json.log", 
+                "MountLabel": "", 
+                "Mounts": [
+                    {
+                        "Destination": "/etcd-data", 
+                        "Mode": "rw", 
+                        "Propagation": "rprivate", 
+                        "RW": true, 
+                        "Source": "/home/ccma/etcd", 
+                        "Type": "bind"
+                    }
+                ], 
+                "Name": "/etcd", 
+                "NetworkSettings": {
+                    "Bridge": "", 
+                    "EndpointID": "d8570a4f248cb44aa88c475a7ab5313eb8e2d43f7042ad4f68bafdfada581e2d", 
+                    "Gateway": "172.17.0.1", 
+                    "GlobalIPv6Address": "", 
+                    "GlobalIPv6PrefixLen": 0, 
+                    "HairpinMode": false, 
+                    "IPAddress": "172.17.0.2", 
+                    "IPPrefixLen": 16, 
+                    "IPv6Gateway": "", 
+                    "LinkLocalIPv6Address": "", 
+                    "LinkLocalIPv6PrefixLen": 0, 
+                    "MacAddress": "02:42:ac:11:00:02", 
+                    "Networks": {
+                        "bridge": {
+                            "Aliases": null, 
+                            "EndpointID": "d8570a4f248cb44aa88c475a7ab5313eb8e2d43f7042ad4f68bafdfada581e2d", 
+                            "Gateway": "172.17.0.1", 
+                            "GlobalIPv6Address": "", 
+                            "GlobalIPv6PrefixLen": 0, 
+                            "IPAMConfig": null, 
+                            "IPAddress": "172.17.0.2", 
+                            "IPPrefixLen": 16, 
+                            "IPv6Gateway": "", 
+                            "Links": null, 
+                            "MacAddress": "02:42:ac:11:00:02", 
+                            "NetworkID": "257a2e393f2cb46831636aef37ac7f8f48b068c0a8937a34aa735f25b18e603c"
+                        }
+                    }, 
+                    "Ports": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "SandboxID": "ed2a683e0185b58a0e52102e85caf1fe6d6141019541bfac186b369e74e7d867", 
+                    "SandboxKey": "/var/run/docker/netns/ed2a683e0185", 
+                    "SecondaryIPAddresses": null, 
+                    "SecondaryIPv6Addresses": null
+                }, 
+                "Path": "/usr/local/bin/etcd", 
+                "ProcessLabel": "", 
+                "ResolvConfPath": "/var/lib/docker/containers/7b26930bf367fc0fd4ad390f6c852830fbf101db0261080b0d31ec7f56a6a943/resolv.conf", 
+                "RestartCount": 0, 
+                "State": {
+                    "Dead": false, 
+                    "Error": "", 
+                    "ExitCode": 0, 
+                    "FinishedAt": "0001-01-01T00:00:00Z", 
+                    "OOMKilled": false, 
+                    "Paused": false, 
+                    "Pid": 13583, 
+                    "Restarting": false, 
+                    "Running": true, 
+                    "StartedAt": "2018-11-01T03:32:14.628381293Z", 
+                    "Status": "running"
+                }
+            }
+        }, 
+        "changed": true, 
+        "failed": false
+    }
+}
+2018-11-01 11:32:39,263 p=8093 u=yungshun |  ok: [10.236.1.2] => {
+    "run_etcd_cluster": {
+        "ansible_facts": {
+            "docker_container": {
+                "AppArmorProfile": "", 
+                "Args": [
+                    "--data-dir=/etcd-data", 
+                    "--name", 
+                    "etcd2", 
+                    "--initial-advertise-peer-urls", 
+                    "http://10.236.1.2:2380", 
+                    "--listen-peer-urls", 
+                    "http://0.0.0.0:2380", 
+                    "--advertise-client-urls", 
+                    "http://10.236.1.2:2379", 
+                    "--listen-client-urls", 
+                    "http://0.0.0.0:2379", 
+                    "--initial-cluster", 
+                    "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                    "--initial-cluster-state", 
+                    "new", 
+                    "--initial-cluster-token", 
+                    "etcd-cluster"
+                ], 
+                "Config": {
+                    "AttachStderr": false, 
+                    "AttachStdin": false, 
+                    "AttachStdout": false, 
+                    "Cmd": [
+                        "/usr/local/bin/etcd", 
+                        "--data-dir=/etcd-data", 
+                        "--name", 
+                        "etcd2", 
+                        "--initial-advertise-peer-urls", 
+                        "http://10.236.1.2:2380", 
+                        "--listen-peer-urls", 
+                        "http://0.0.0.0:2380", 
+                        "--advertise-client-urls", 
+                        "http://10.236.1.2:2379", 
+                        "--listen-client-urls", 
+                        "http://0.0.0.0:2379", 
+                        "--initial-cluster", 
+                        "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                        "--initial-cluster-state", 
+                        "new", 
+                        "--initial-cluster-token", 
+                        "etcd-cluster"
+                    ], 
+                    "Domainname": "", 
+                    "Entrypoint": null, 
+                    "Env": [
+                        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+                    ], 
+                    "ExposedPorts": {
+                        "2379/tcp": {}, 
+                        "2380/tcp": {}
+                    }, 
+                    "Hostname": "82075c420aad", 
+                    "Image": "gcr.io/etcd-development/etcd:latest", 
+                    "Labels": {}, 
+                    "OnBuild": null, 
+                    "OpenStdin": false, 
+                    "StdinOnce": false, 
+                    "Tty": false, 
+                    "User": "", 
+                    "Volumes": {
+                        "/etcd-data": {}
+                    }, 
+                    "WorkingDir": ""
+                }, 
+                "Created": "2018-11-01T03:32:14.041308142Z", 
+                "Driver": "aufs", 
+                "ExecIDs": null, 
+                "GraphDriver": {
+                    "Data": null, 
+                    "Name": "aufs"
+                }, 
+                "HostConfig": {
+                    "AutoRemove": false, 
+                    "Binds": [
+                        "/home/ccma/etcd:/etcd-data:rw"
+                    ], 
+                    "BlkioDeviceReadBps": null, 
+                    "BlkioDeviceReadIOps": null, 
+                    "BlkioDeviceWriteBps": null, 
+                    "BlkioDeviceWriteIOps": null, 
+                    "BlkioWeight": 0, 
+                    "BlkioWeightDevice": null, 
+                    "CapAdd": null, 
+                    "CapDrop": null, 
+                    "Cgroup": "", 
+                    "CgroupParent": "", 
+                    "ConsoleSize": [
+                        0, 
+                        0
+                    ], 
+                    "ContainerIDFile": "", 
+                    "CpuCount": 0, 
+                    "CpuPercent": 0, 
+                    "CpuPeriod": 0, 
+                    "CpuQuota": 0, 
+                    "CpuRealtimePeriod": 0, 
+                    "CpuRealtimeRuntime": 0, 
+                    "CpuShares": 0, 
+                    "CpusetCpus": "", 
+                    "CpusetMems": "", 
+                    "Devices": null, 
+                    "DiskQuota": 0, 
+                    "Dns": null, 
+                    "DnsOptions": null, 
+                    "DnsSearch": null, 
+                    "ExtraHosts": null, 
+                    "GroupAdd": null, 
+                    "IOMaximumBandwidth": 0, 
+                    "IOMaximumIOps": 0, 
+                    "Init": false, 
+                    "IpcMode": "", 
+                    "Isolation": "", 
+                    "KernelMemory": 0, 
+                    "Links": null, 
+                    "LogConfig": {
+                        "Config": {}, 
+                        "Type": "json-file"
+                    }, 
+                    "Memory": 0, 
+                    "MemoryReservation": 0, 
+                    "MemorySwap": 0, 
+                    "MemorySwappiness": -1, 
+                    "NanoCpus": 0, 
+                    "NetworkMode": "default", 
+                    "OomKillDisable": false, 
+                    "OomScoreAdj": 0, 
+                    "PidMode": "", 
+                    "PidsLimit": 0, 
+                    "PortBindings": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "Privileged": false, 
+                    "PublishAllPorts": false, 
+                    "ReadonlyRootfs": false, 
+                    "RestartPolicy": {
+                        "MaximumRetryCount": 0, 
+                        "Name": ""
+                    }, 
+                    "Runtime": "runc", 
+                    "SecurityOpt": null, 
+                    "ShmSize": 67108864, 
+                    "UTSMode": "", 
+                    "Ulimits": null, 
+                    "UsernsMode": "", 
+                    "VolumeDriver": "", 
+                    "VolumesFrom": null
+                }, 
+                "HostnamePath": "/var/lib/docker/containers/82075c420aada8675cd141914e4d4673abb39fadab04300a28d6d0d25efca318/hostname", 
+                "HostsPath": "/var/lib/docker/containers/82075c420aada8675cd141914e4d4673abb39fadab04300a28d6d0d25efca318/hosts", 
+                "Id": "82075c420aada8675cd141914e4d4673abb39fadab04300a28d6d0d25efca318", 
+                "Image": "sha256:643c21638c1c966fe18ca1cc8547dd401df70e85d83ca6de76b9a7957703b993", 
+                "LogPath": "/var/lib/docker/containers/82075c420aada8675cd141914e4d4673abb39fadab04300a28d6d0d25efca318/82075c420aada8675cd141914e4d4673abb39fadab04300a28d6d0d25efca318-json.log", 
+                "MountLabel": "", 
+                "Mounts": [
+                    {
+                        "Destination": "/etcd-data", 
+                        "Mode": "rw", 
+                        "Propagation": "rprivate", 
+                        "RW": true, 
+                        "Source": "/home/ccma/etcd", 
+                        "Type": "bind"
+                    }
+                ], 
+                "Name": "/etcd", 
+                "NetworkSettings": {
+                    "Bridge": "", 
+                    "EndpointID": "79412d455a9542ff8102fc5664f3048777b2191b4f36a24ac7b853709be590cd", 
+                    "Gateway": "172.17.0.1", 
+                    "GlobalIPv6Address": "", 
+                    "GlobalIPv6PrefixLen": 0, 
+                    "HairpinMode": false, 
+                    "IPAddress": "172.17.0.2", 
+                    "IPPrefixLen": 16, 
+                    "IPv6Gateway": "", 
+                    "LinkLocalIPv6Address": "", 
+                    "LinkLocalIPv6PrefixLen": 0, 
+                    "MacAddress": "02:42:ac:11:00:02", 
+                    "Networks": {
+                        "bridge": {
+                            "Aliases": null, 
+                            "EndpointID": "79412d455a9542ff8102fc5664f3048777b2191b4f36a24ac7b853709be590cd", 
+                            "Gateway": "172.17.0.1", 
+                            "GlobalIPv6Address": "", 
+                            "GlobalIPv6PrefixLen": 0, 
+                            "IPAMConfig": null, 
+                            "IPAddress": "172.17.0.2", 
+                            "IPPrefixLen": 16, 
+                            "IPv6Gateway": "", 
+                            "Links": null, 
+                            "MacAddress": "02:42:ac:11:00:02", 
+                            "NetworkID": "5801fbad92c8ffe2864a5a9966e578f93380bbb57dae0cecb73214257a2c02a2"
+                        }
+                    }, 
+                    "Ports": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "SandboxID": "1de70ccd10ffbeee3006421f2ad46ec63ce35eb121ef9b5921d5272edc8459d5", 
+                    "SandboxKey": "/var/run/docker/netns/1de70ccd10ff", 
+                    "SecondaryIPAddresses": null, 
+                    "SecondaryIPv6Addresses": null
+                }, 
+                "Path": "/usr/local/bin/etcd", 
+                "ProcessLabel": "", 
+                "ResolvConfPath": "/var/lib/docker/containers/82075c420aada8675cd141914e4d4673abb39fadab04300a28d6d0d25efca318/resolv.conf", 
+                "RestartCount": 0, 
+                "State": {
+                    "Dead": false, 
+                    "Error": "", 
+                    "ExitCode": 0, 
+                    "FinishedAt": "0001-01-01T00:00:00Z", 
+                    "OOMKilled": false, 
+                    "Paused": false, 
+                    "Pid": 29366, 
+                    "Restarting": false, 
+                    "Running": true, 
+                    "StartedAt": "2018-11-01T03:32:37.923624194Z", 
+                    "Status": "running"
+                }
+            }
+        }, 
+        "changed": true, 
+        "failed": false
+    }
+}
+2018-11-01 11:32:39,365 p=8093 u=yungshun |  ok: [10.236.1.3] => {
+    "run_etcd_cluster": {
+        "ansible_facts": {
+            "docker_container": {
+                "AppArmorProfile": "", 
+                "Args": [
+                    "--data-dir=/etcd-data", 
+                    "--name", 
+                    "etcd3", 
+                    "--initial-advertise-peer-urls", 
+                    "http://10.236.1.3:2380", 
+                    "--listen-peer-urls", 
+                    "http://0.0.0.0:2380", 
+                    "--advertise-client-urls", 
+                    "http://10.236.1.3:2379", 
+                    "--listen-client-urls", 
+                    "http://0.0.0.0:2379", 
+                    "--initial-cluster", 
+                    "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                    "--initial-cluster-state", 
+                    "new", 
+                    "--initial-cluster-token", 
+                    "etcd-cluster"
+                ], 
+                "Config": {
+                    "AttachStderr": false, 
+                    "AttachStdin": false, 
+                    "AttachStdout": false, 
+                    "Cmd": [
+                        "/usr/local/bin/etcd", 
+                        "--data-dir=/etcd-data", 
+                        "--name", 
+                        "etcd3", 
+                        "--initial-advertise-peer-urls", 
+                        "http://10.236.1.3:2380", 
+                        "--listen-peer-urls", 
+                        "http://0.0.0.0:2380", 
+                        "--advertise-client-urls", 
+                        "http://10.236.1.3:2379", 
+                        "--listen-client-urls", 
+                        "http://0.0.0.0:2379", 
+                        "--initial-cluster", 
+                        "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                        "--initial-cluster-state", 
+                        "new", 
+                        "--initial-cluster-token", 
+                        "etcd-cluster"
+                    ], 
+                    "Domainname": "", 
+                    "Entrypoint": null, 
+                    "Env": [
+                        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+                    ], 
+                    "ExposedPorts": {
+                        "2379/tcp": {}, 
+                        "2380/tcp": {}
+                    }, 
+                    "Hostname": "f1a3be1a88dc", 
+                    "Image": "gcr.io/etcd-development/etcd:latest", 
+                    "Labels": {}, 
+                    "OnBuild": null, 
+                    "OpenStdin": false, 
+                    "StdinOnce": false, 
+                    "Tty": false, 
+                    "User": "", 
+                    "Volumes": {
+                        "/etcd-data": {}
+                    }, 
+                    "WorkingDir": ""
+                }, 
+                "Created": "2018-11-01T03:32:14.046142763Z", 
+                "Driver": "aufs", 
+                "ExecIDs": null, 
+                "GraphDriver": {
+                    "Data": null, 
+                    "Name": "aufs"
+                }, 
+                "HostConfig": {
+                    "AutoRemove": false, 
+                    "Binds": [
+                        "/home/ccma/etcd:/etcd-data:rw"
+                    ], 
+                    "BlkioDeviceReadBps": null, 
+                    "BlkioDeviceReadIOps": null, 
+                    "BlkioDeviceWriteBps": null, 
+                    "BlkioDeviceWriteIOps": null, 
+                    "BlkioWeight": 0, 
+                    "BlkioWeightDevice": null, 
+                    "CapAdd": null, 
+                    "CapDrop": null, 
+                    "Cgroup": "", 
+                    "CgroupParent": "", 
+                    "ConsoleSize": [
+                        0, 
+                        0
+                    ], 
+                    "ContainerIDFile": "", 
+                    "CpuCount": 0, 
+                    "CpuPercent": 0, 
+                    "CpuPeriod": 0, 
+                    "CpuQuota": 0, 
+                    "CpuRealtimePeriod": 0, 
+                    "CpuRealtimeRuntime": 0, 
+                    "CpuShares": 0, 
+                    "CpusetCpus": "", 
+                    "CpusetMems": "", 
+                    "Devices": null, 
+                    "DiskQuota": 0, 
+                    "Dns": null, 
+                    "DnsOptions": null, 
+                    "DnsSearch": null, 
+                    "ExtraHosts": null, 
+                    "GroupAdd": null, 
+                    "IOMaximumBandwidth": 0, 
+                    "IOMaximumIOps": 0, 
+                    "Init": false, 
+                    "IpcMode": "", 
+                    "Isolation": "", 
+                    "KernelMemory": 0, 
+                    "Links": null, 
+                    "LogConfig": {
+                        "Config": {}, 
+                        "Type": "json-file"
+                    }, 
+                    "Memory": 0, 
+                    "MemoryReservation": 0, 
+                    "MemorySwap": 0, 
+                    "MemorySwappiness": -1, 
+                    "NanoCpus": 0, 
+                    "NetworkMode": "default", 
+                    "OomKillDisable": false, 
+                    "OomScoreAdj": 0, 
+                    "PidMode": "", 
+                    "PidsLimit": 0, 
+                    "PortBindings": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "Privileged": false, 
+                    "PublishAllPorts": false, 
+                    "ReadonlyRootfs": false, 
+                    "RestartPolicy": {
+                        "MaximumRetryCount": 0, 
+                        "Name": ""
+                    }, 
+                    "Runtime": "runc", 
+                    "SecurityOpt": null, 
+                    "ShmSize": 67108864, 
+                    "UTSMode": "", 
+                    "Ulimits": null, 
+                    "UsernsMode": "", 
+                    "VolumeDriver": "", 
+                    "VolumesFrom": null
+                }, 
+                "HostnamePath": "/var/lib/docker/containers/f1a3be1a88dc320bc78bac05a32b9e63ff4091c81794e018a21babef4714aa33/hostname", 
+                "HostsPath": "/var/lib/docker/containers/f1a3be1a88dc320bc78bac05a32b9e63ff4091c81794e018a21babef4714aa33/hosts", 
+                "Id": "f1a3be1a88dc320bc78bac05a32b9e63ff4091c81794e018a21babef4714aa33", 
+                "Image": "sha256:643c21638c1c966fe18ca1cc8547dd401df70e85d83ca6de76b9a7957703b993", 
+                "LogPath": "/var/lib/docker/containers/f1a3be1a88dc320bc78bac05a32b9e63ff4091c81794e018a21babef4714aa33/f1a3be1a88dc320bc78bac05a32b9e63ff4091c81794e018a21babef4714aa33-json.log", 
+                "MountLabel": "", 
+                "Mounts": [
+                    {
+                        "Destination": "/etcd-data", 
+                        "Mode": "rw", 
+                        "Propagation": "rprivate", 
+                        "RW": true, 
+                        "Source": "/home/ccma/etcd", 
+                        "Type": "bind"
+                    }
+                ], 
+                "Name": "/etcd", 
+                "NetworkSettings": {
+                    "Bridge": "", 
+                    "EndpointID": "56133bc184bfecbd1cad597920fc95a75be0a54ec2f122ee2fe74365bbcfd365", 
+                    "Gateway": "172.17.0.1", 
+                    "GlobalIPv6Address": "", 
+                    "GlobalIPv6PrefixLen": 0, 
+                    "HairpinMode": false, 
+                    "IPAddress": "172.17.0.2", 
+                    "IPPrefixLen": 16, 
+                    "IPv6Gateway": "", 
+                    "LinkLocalIPv6Address": "", 
+                    "LinkLocalIPv6PrefixLen": 0, 
+                    "MacAddress": "02:42:ac:11:00:02", 
+                    "Networks": {
+                        "bridge": {
+                            "Aliases": null, 
+                            "EndpointID": "56133bc184bfecbd1cad597920fc95a75be0a54ec2f122ee2fe74365bbcfd365", 
+                            "Gateway": "172.17.0.1", 
+                            "GlobalIPv6Address": "", 
+                            "GlobalIPv6PrefixLen": 0, 
+                            "IPAMConfig": null, 
+                            "IPAddress": "172.17.0.2", 
+                            "IPPrefixLen": 16, 
+                            "IPv6Gateway": "", 
+                            "Links": null, 
+                            "MacAddress": "02:42:ac:11:00:02", 
+                            "NetworkID": "f00e6b87317a9ba039bbbf3e7092ffa618b1b8d7783004ffaea0e149534185da"
+                        }
+                    }, 
+                    "Ports": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "SandboxID": "b26f271d660df84d71dd92030bcb353101ef080703130834b0c14dcab0452a17", 
+                    "SandboxKey": "/var/run/docker/netns/b26f271d660d", 
+                    "SecondaryIPAddresses": null, 
+                    "SecondaryIPv6Addresses": null
+                }, 
+                "Path": "/usr/local/bin/etcd", 
+                "ProcessLabel": "", 
+                "ResolvConfPath": "/var/lib/docker/containers/f1a3be1a88dc320bc78bac05a32b9e63ff4091c81794e018a21babef4714aa33/resolv.conf", 
+                "RestartCount": 0, 
+                "State": {
+                    "Dead": false, 
+                    "Error": "", 
+                    "ExitCode": 0, 
+                    "FinishedAt": "0001-01-01T00:00:00Z", 
+                    "OOMKilled": false, 
+                    "Paused": false, 
+                    "Pid": 25260, 
+                    "Restarting": false, 
+                    "Running": true, 
+                    "StartedAt": "2018-11-01T03:32:38.629119256Z", 
+                    "Status": "running"
+                }
+            }
+        }, 
+        "changed": true, 
+        "failed": false
+    }
+}
+2018-11-01 11:32:39,367 p=8093 u=yungshun |  PLAY RECAP *********************************************************************
+2018-11-01 11:32:39,367 p=8093 u=yungshun |  10.236.1.1                 : ok=17   changed=8    unreachable=0    failed=0   
+2018-11-01 11:32:39,367 p=8093 u=yungshun |  10.236.1.2                 : ok=17   changed=8    unreachable=0    failed=0   
+2018-11-01 11:32:39,367 p=8093 u=yungshun |  10.236.1.3                 : ok=17   changed=8    unreachable=0    failed=0   
+2018-11-01 13:28:14,750 p=9122 u=yungshun |  PLAY [etcd] ********************************************************************
+2018-11-01 13:28:14,761 p=9122 u=yungshun |  TASK [Install Python 2.7] ******************************************************
+2018-11-01 13:28:16,122 p=9122 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:28:16,151 p=9122 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:28:16,223 p=9122 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:28:16,228 p=9122 u=yungshun |  TASK [Gather facts after Python is definitely present] *************************
+2018-11-01 13:28:17,451 p=9122 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:28:17,566 p=9122 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:28:17,647 p=9122 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:28:17,719 p=9122 u=yungshun |  TASK [Install pip and docker.io] ***********************************************
+2018-11-01 13:28:19,201 p=9122 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:28:19,219 p=9122 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:28:19,224 p=9122 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:28:19,294 p=9122 u=yungshun |  TASK [Install Docker Python library] *******************************************
+2018-11-01 13:28:20,954 p=9122 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:28:20,990 p=9122 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:28:21,019 p=9122 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:28:21,086 p=9122 u=yungshun |  TASK [Add ccma to the docker group] ********************************************
+2018-11-01 13:28:21,888 p=9122 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 13:28:21,911 p=9122 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 13:28:21,917 p=9122 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 13:28:21,985 p=9122 u=yungshun |  TASK [Reboot immediately if there was a change] ********************************
+2018-11-01 13:28:23,505 p=9122 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 13:28:23,609 p=9122 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 13:28:23,729 p=9122 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 13:28:23,799 p=9122 u=yungshun |  TASK [Wait for the reboot to complete if there was a change] *******************
+2018-11-01 13:28:30,521 p=9122 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:28:30,556 p=9122 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:28:30,556 p=9122 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:28:30,632 p=9122 u=yungshun |  TASK [Install pexpect] *********************************************************
+2018-11-01 13:28:31,885 p=9122 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:28:32,060 p=9122 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:28:32,147 p=9122 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:28:32,211 p=9122 u=yungshun |  TASK [Stop Docker engine] ******************************************************
+2018-11-01 13:28:33,167 p=9122 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 13:28:33,202 p=9122 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 13:28:33,220 p=9122 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 13:28:33,286 p=9122 u=yungshun |  TASK [Restart Docker engine with cluster configuration] ************************
+2018-11-01 13:28:33,792 p=9122 u=yungshun |  changed: [10.236.1.1] => (item=nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://10.236.1.1:2379 --cluster-advertise=10.236.1.1:2375 >/dev/null 2>&1 &)
+2018-11-01 13:28:33,897 p=9122 u=yungshun |  changed: [10.236.1.2] => (item=nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://10.236.1.2:2379 --cluster-advertise=10.236.1.2:2375 >/dev/null 2>&1 &)
+2018-11-01 13:28:34,012 p=9122 u=yungshun |  changed: [10.236.1.3] => (item=nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://10.236.1.3:2379 --cluster-advertise=10.236.1.3:2375 >/dev/null 2>&1 &)
+2018-11-01 13:28:34,079 p=9122 u=yungshun |  TASK [Create a directory for mounting host volume] *****************************
+2018-11-01 13:28:34,798 p=9122 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:28:34,804 p=9122 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:28:34,810 p=9122 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:28:34,883 p=9122 u=yungshun |  TASK [Check for containers that actually exist] ********************************
+2018-11-01 13:28:35,395 p=9122 u=yungshun |  changed: [10.236.1.1] => (item=etcd)
+2018-11-01 13:28:35,479 p=9122 u=yungshun |  changed: [10.236.1.2] => (item=etcd)
+2018-11-01 13:28:35,569 p=9122 u=yungshun |  changed: [10.236.1.3] => (item=etcd)
+2018-11-01 13:28:35,639 p=9122 u=yungshun |  TASK [Remove the containers found by the above command] ************************
+2018-11-01 13:28:36,739 p=9122 u=yungshun |  changed: [10.236.1.1] => (item={'_ansible_parsed': True, 'stderr_lines': [], u'changed': True, u'stdout': u'7b26930bf367', '_ansible_item_result': True, u'delta': u'0:00:00.019157', 'stdout_lines': [u'7b26930bf367'], '_ansible_item_label': u'etcd', u'end': u'2018-11-01 13:28:35.317655', '_ansible_no_log': False, 'failed': False, u'cmd': u'docker ps -aq --filter "name=etcd"', 'item': u'etcd', u'stderr': u'', u'rc': 0, u'invocation': {u'module_args': {u'warn': True, u'executable': None, u'_uses_shell': True, u'_raw_params': u'docker ps -aq --filter "name=etcd"', u'removes': None, u'argv': None, u'creates': None, u'chdir': None, u'stdin': None}}, u'start': u'2018-11-01 13:28:35.298498', '_ansible_ignore_errors': None})
+2018-11-01 13:28:36,800 p=9122 u=yungshun |  changed: [10.236.1.2] => (item={'_ansible_parsed': True, 'stderr_lines': [], u'changed': True, u'stdout': u'82075c420aad', '_ansible_item_result': True, u'delta': u'0:00:00.014107', 'stdout_lines': [u'82075c420aad'], '_ansible_item_label': u'etcd', u'end': u'2018-11-01 13:28:35.403695', '_ansible_no_log': False, 'failed': False, u'cmd': u'docker ps -aq --filter "name=etcd"', 'item': u'etcd', u'stderr': u'', u'rc': 0, u'invocation': {u'module_args': {u'warn': True, u'executable': None, u'_uses_shell': True, u'_raw_params': u'docker ps -aq --filter "name=etcd"', u'removes': None, u'argv': None, u'creates': None, u'chdir': None, u'stdin': None}}, u'start': u'2018-11-01 13:28:35.389588', '_ansible_ignore_errors': None})
+2018-11-01 13:28:36,942 p=9122 u=yungshun |  changed: [10.236.1.3] => (item={'_ansible_parsed': True, 'stderr_lines': [], u'changed': True, u'stdout': u'f1a3be1a88dc', '_ansible_item_result': True, u'delta': u'0:00:00.014372', 'stdout_lines': [u'f1a3be1a88dc'], '_ansible_item_label': u'etcd', u'end': u'2018-11-01 13:28:35.497210', '_ansible_no_log': False, 'failed': False, u'cmd': u'docker ps -aq --filter "name=etcd"', 'item': u'etcd', u'stderr': u'', u'rc': 0, u'invocation': {u'module_args': {u'warn': True, u'executable': None, u'_uses_shell': True, u'_raw_params': u'docker ps -aq --filter "name=etcd"', u'removes': None, u'argv': None, u'creates': None, u'chdir': None, u'stdin': None}}, u'start': u'2018-11-01 13:28:35.482838', '_ansible_ignore_errors': None})
+2018-11-01 13:28:37,011 p=9122 u=yungshun |  TASK [Debug] *******************************************************************
+2018-11-01 13:28:37,269 p=9122 u=yungshun |  ok: [10.236.1.1] => {
+    "hostvars[inventory_hostname]['etcd_name']": "etcd1"
+}
+2018-11-01 13:28:37,355 p=9122 u=yungshun |  ok: [10.236.1.2] => {
+    "hostvars[inventory_hostname]['etcd_name']": "etcd2"
+}
+2018-11-01 13:28:37,458 p=9122 u=yungshun |  ok: [10.236.1.3] => {
+    "hostvars[inventory_hostname]['etcd_name']": "etcd3"
+}
+2018-11-01 13:28:37,525 p=9122 u=yungshun |  TASK [Run a 3 node etcd cluster] ***********************************************
+2018-11-01 13:28:39,269 p=9122 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 13:29:00,336 p=9122 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 13:29:03,392 p=9122 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 13:29:03,467 p=9122 u=yungshun |  TASK [Debug run_etcd_cluster] **************************************************
+2018-11-01 13:29:03,763 p=9122 u=yungshun |  ok: [10.236.1.1] => {
+    "run_etcd_cluster": {
+        "ansible_facts": {
+            "docker_container": {
+                "AppArmorProfile": "", 
+                "Args": [
+                    "--data-dir=/etcd-data", 
+                    "--name", 
+                    "etcd1", 
+                    "--initial-advertise-peer-urls", 
+                    "http://10.236.1.1:2380", 
+                    "--listen-peer-urls", 
+                    "http://0.0.0.0:2380", 
+                    "--advertise-client-urls", 
+                    "http://10.236.1.1:2379", 
+                    "--listen-client-urls", 
+                    "http://0.0.0.0:2379", 
+                    "--initial-cluster", 
+                    "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                    "--initial-cluster-state", 
+                    "new", 
+                    "--initial-cluster-token", 
+                    "etcd-cluster"
+                ], 
+                "Config": {
+                    "AttachStderr": false, 
+                    "AttachStdin": false, 
+                    "AttachStdout": false, 
+                    "Cmd": [
+                        "/usr/local/bin/etcd", 
+                        "--data-dir=/etcd-data", 
+                        "--name", 
+                        "etcd1", 
+                        "--initial-advertise-peer-urls", 
+                        "http://10.236.1.1:2380", 
+                        "--listen-peer-urls", 
+                        "http://0.0.0.0:2380", 
+                        "--advertise-client-urls", 
+                        "http://10.236.1.1:2379", 
+                        "--listen-client-urls", 
+                        "http://0.0.0.0:2379", 
+                        "--initial-cluster", 
+                        "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                        "--initial-cluster-state", 
+                        "new", 
+                        "--initial-cluster-token", 
+                        "etcd-cluster"
+                    ], 
+                    "Domainname": "", 
+                    "Entrypoint": null, 
+                    "Env": [
+                        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+                    ], 
+                    "ExposedPorts": {
+                        "2379/tcp": {}, 
+                        "2380/tcp": {}
+                    }, 
+                    "Hostname": "93ccae560b8b", 
+                    "Image": "gcr.io/etcd-development/etcd:latest", 
+                    "Labels": {}, 
+                    "OnBuild": null, 
+                    "OpenStdin": false, 
+                    "StdinOnce": false, 
+                    "Tty": false, 
+                    "User": "", 
+                    "Volumes": {
+                        "/etcd-data": {}
+                    }, 
+                    "WorkingDir": ""
+                }, 
+                "Created": "2018-11-01T05:28:38.554387112Z", 
+                "Driver": "aufs", 
+                "ExecIDs": null, 
+                "GraphDriver": {
+                    "Data": null, 
+                    "Name": "aufs"
+                }, 
+                "HostConfig": {
+                    "AutoRemove": false, 
+                    "Binds": [
+                        "/home/ccma/etcd:/etcd-data:rw"
+                    ], 
+                    "BlkioDeviceReadBps": null, 
+                    "BlkioDeviceReadIOps": null, 
+                    "BlkioDeviceWriteBps": null, 
+                    "BlkioDeviceWriteIOps": null, 
+                    "BlkioWeight": 0, 
+                    "BlkioWeightDevice": null, 
+                    "CapAdd": null, 
+                    "CapDrop": null, 
+                    "Cgroup": "", 
+                    "CgroupParent": "", 
+                    "ConsoleSize": [
+                        0, 
+                        0
+                    ], 
+                    "ContainerIDFile": "", 
+                    "CpuCount": 0, 
+                    "CpuPercent": 0, 
+                    "CpuPeriod": 0, 
+                    "CpuQuota": 0, 
+                    "CpuRealtimePeriod": 0, 
+                    "CpuRealtimeRuntime": 0, 
+                    "CpuShares": 0, 
+                    "CpusetCpus": "", 
+                    "CpusetMems": "", 
+                    "Devices": null, 
+                    "DiskQuota": 0, 
+                    "Dns": null, 
+                    "DnsOptions": null, 
+                    "DnsSearch": null, 
+                    "ExtraHosts": null, 
+                    "GroupAdd": null, 
+                    "IOMaximumBandwidth": 0, 
+                    "IOMaximumIOps": 0, 
+                    "Init": false, 
+                    "IpcMode": "", 
+                    "Isolation": "", 
+                    "KernelMemory": 0, 
+                    "Links": null, 
+                    "LogConfig": {
+                        "Config": {}, 
+                        "Type": "json-file"
+                    }, 
+                    "Memory": 0, 
+                    "MemoryReservation": 0, 
+                    "MemorySwap": 0, 
+                    "MemorySwappiness": -1, 
+                    "NanoCpus": 0, 
+                    "NetworkMode": "default", 
+                    "OomKillDisable": false, 
+                    "OomScoreAdj": 0, 
+                    "PidMode": "", 
+                    "PidsLimit": 0, 
+                    "PortBindings": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "Privileged": false, 
+                    "PublishAllPorts": false, 
+                    "ReadonlyRootfs": false, 
+                    "RestartPolicy": {
+                        "MaximumRetryCount": 0, 
+                        "Name": ""
+                    }, 
+                    "Runtime": "runc", 
+                    "SecurityOpt": null, 
+                    "ShmSize": 67108864, 
+                    "UTSMode": "", 
+                    "Ulimits": null, 
+                    "UsernsMode": "", 
+                    "VolumeDriver": "", 
+                    "VolumesFrom": null
+                }, 
+                "HostnamePath": "/var/lib/docker/containers/93ccae560b8bef0948c554900992195ed0f1246353f2cc6ea1c9ecf25bcaf50e/hostname", 
+                "HostsPath": "/var/lib/docker/containers/93ccae560b8bef0948c554900992195ed0f1246353f2cc6ea1c9ecf25bcaf50e/hosts", 
+                "Id": "93ccae560b8bef0948c554900992195ed0f1246353f2cc6ea1c9ecf25bcaf50e", 
+                "Image": "sha256:643c21638c1c966fe18ca1cc8547dd401df70e85d83ca6de76b9a7957703b993", 
+                "LogPath": "/var/lib/docker/containers/93ccae560b8bef0948c554900992195ed0f1246353f2cc6ea1c9ecf25bcaf50e/93ccae560b8bef0948c554900992195ed0f1246353f2cc6ea1c9ecf25bcaf50e-json.log", 
+                "MountLabel": "", 
+                "Mounts": [
+                    {
+                        "Destination": "/etcd-data", 
+                        "Mode": "rw", 
+                        "Propagation": "rprivate", 
+                        "RW": true, 
+                        "Source": "/home/ccma/etcd", 
+                        "Type": "bind"
+                    }
+                ], 
+                "Name": "/etcd", 
+                "NetworkSettings": {
+                    "Bridge": "", 
+                    "EndpointID": "478f281db20f629feb8a2140895c67e76f5ec6782344be21ed3a58507577d062", 
+                    "Gateway": "172.17.0.1", 
+                    "GlobalIPv6Address": "", 
+                    "GlobalIPv6PrefixLen": 0, 
+                    "HairpinMode": false, 
+                    "IPAddress": "172.17.0.2", 
+                    "IPPrefixLen": 16, 
+                    "IPv6Gateway": "", 
+                    "LinkLocalIPv6Address": "", 
+                    "LinkLocalIPv6PrefixLen": 0, 
+                    "MacAddress": "02:42:ac:11:00:02", 
+                    "Networks": {
+                        "bridge": {
+                            "Aliases": null, 
+                            "EndpointID": "478f281db20f629feb8a2140895c67e76f5ec6782344be21ed3a58507577d062", 
+                            "Gateway": "172.17.0.1", 
+                            "GlobalIPv6Address": "", 
+                            "GlobalIPv6PrefixLen": 0, 
+                            "IPAMConfig": null, 
+                            "IPAddress": "172.17.0.2", 
+                            "IPPrefixLen": 16, 
+                            "IPv6Gateway": "", 
+                            "Links": null, 
+                            "MacAddress": "02:42:ac:11:00:02", 
+                            "NetworkID": "257a2e393f2cb46831636aef37ac7f8f48b068c0a8937a34aa735f25b18e603c"
+                        }
+                    }, 
+                    "Ports": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "SandboxID": "f13556b09ef8f3738908e824e978a1bab1d732b3d338853f540655cf1a4b7777", 
+                    "SandboxKey": "/var/run/docker/netns/f13556b09ef8", 
+                    "SecondaryIPAddresses": null, 
+                    "SecondaryIPv6Addresses": null
+                }, 
+                "Path": "/usr/local/bin/etcd", 
+                "ProcessLabel": "", 
+                "ResolvConfPath": "/var/lib/docker/containers/93ccae560b8bef0948c554900992195ed0f1246353f2cc6ea1c9ecf25bcaf50e/resolv.conf", 
+                "RestartCount": 0, 
+                "State": {
+                    "Dead": false, 
+                    "Error": "", 
+                    "ExitCode": 0, 
+                    "FinishedAt": "0001-01-01T00:00:00Z", 
+                    "OOMKilled": false, 
+                    "Paused": false, 
+                    "Pid": 14424, 
+                    "Restarting": false, 
+                    "Running": true, 
+                    "StartedAt": "2018-11-01T05:28:39.134471271Z", 
+                    "Status": "running"
+                }
+            }
+        }, 
+        "changed": true, 
+        "failed": false
+    }
+}
+2018-11-01 13:29:03,820 p=9122 u=yungshun |  ok: [10.236.1.2] => {
+    "run_etcd_cluster": {
+        "ansible_facts": {
+            "docker_container": {
+                "AppArmorProfile": "", 
+                "Args": [
+                    "--data-dir=/etcd-data", 
+                    "--name", 
+                    "etcd2", 
+                    "--initial-advertise-peer-urls", 
+                    "http://10.236.1.2:2380", 
+                    "--listen-peer-urls", 
+                    "http://0.0.0.0:2380", 
+                    "--advertise-client-urls", 
+                    "http://10.236.1.2:2379", 
+                    "--listen-client-urls", 
+                    "http://0.0.0.0:2379", 
+                    "--initial-cluster", 
+                    "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                    "--initial-cluster-state", 
+                    "new", 
+                    "--initial-cluster-token", 
+                    "etcd-cluster"
+                ], 
+                "Config": {
+                    "AttachStderr": false, 
+                    "AttachStdin": false, 
+                    "AttachStdout": false, 
+                    "Cmd": [
+                        "/usr/local/bin/etcd", 
+                        "--data-dir=/etcd-data", 
+                        "--name", 
+                        "etcd2", 
+                        "--initial-advertise-peer-urls", 
+                        "http://10.236.1.2:2380", 
+                        "--listen-peer-urls", 
+                        "http://0.0.0.0:2380", 
+                        "--advertise-client-urls", 
+                        "http://10.236.1.2:2379", 
+                        "--listen-client-urls", 
+                        "http://0.0.0.0:2379", 
+                        "--initial-cluster", 
+                        "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                        "--initial-cluster-state", 
+                        "new", 
+                        "--initial-cluster-token", 
+                        "etcd-cluster"
+                    ], 
+                    "Domainname": "", 
+                    "Entrypoint": null, 
+                    "Env": [
+                        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+                    ], 
+                    "ExposedPorts": {
+                        "2379/tcp": {}, 
+                        "2380/tcp": {}
+                    }, 
+                    "Hostname": "24e7cceee007", 
+                    "Image": "gcr.io/etcd-development/etcd:latest", 
+                    "Labels": {}, 
+                    "OnBuild": null, 
+                    "OpenStdin": false, 
+                    "StdinOnce": false, 
+                    "Tty": false, 
+                    "User": "", 
+                    "Volumes": {
+                        "/etcd-data": {}
+                    }, 
+                    "WorkingDir": ""
+                }, 
+                "Created": "2018-11-01T05:28:38.54079722Z", 
+                "Driver": "aufs", 
+                "ExecIDs": null, 
+                "GraphDriver": {
+                    "Data": null, 
+                    "Name": "aufs"
+                }, 
+                "HostConfig": {
+                    "AutoRemove": false, 
+                    "Binds": [
+                        "/home/ccma/etcd:/etcd-data:rw"
+                    ], 
+                    "BlkioDeviceReadBps": null, 
+                    "BlkioDeviceReadIOps": null, 
+                    "BlkioDeviceWriteBps": null, 
+                    "BlkioDeviceWriteIOps": null, 
+                    "BlkioWeight": 0, 
+                    "BlkioWeightDevice": null, 
+                    "CapAdd": null, 
+                    "CapDrop": null, 
+                    "Cgroup": "", 
+                    "CgroupParent": "", 
+                    "ConsoleSize": [
+                        0, 
+                        0
+                    ], 
+                    "ContainerIDFile": "", 
+                    "CpuCount": 0, 
+                    "CpuPercent": 0, 
+                    "CpuPeriod": 0, 
+                    "CpuQuota": 0, 
+                    "CpuRealtimePeriod": 0, 
+                    "CpuRealtimeRuntime": 0, 
+                    "CpuShares": 0, 
+                    "CpusetCpus": "", 
+                    "CpusetMems": "", 
+                    "Devices": null, 
+                    "DiskQuota": 0, 
+                    "Dns": null, 
+                    "DnsOptions": null, 
+                    "DnsSearch": null, 
+                    "ExtraHosts": null, 
+                    "GroupAdd": null, 
+                    "IOMaximumBandwidth": 0, 
+                    "IOMaximumIOps": 0, 
+                    "Init": false, 
+                    "IpcMode": "", 
+                    "Isolation": "", 
+                    "KernelMemory": 0, 
+                    "Links": null, 
+                    "LogConfig": {
+                        "Config": {}, 
+                        "Type": "json-file"
+                    }, 
+                    "Memory": 0, 
+                    "MemoryReservation": 0, 
+                    "MemorySwap": 0, 
+                    "MemorySwappiness": -1, 
+                    "NanoCpus": 0, 
+                    "NetworkMode": "default", 
+                    "OomKillDisable": false, 
+                    "OomScoreAdj": 0, 
+                    "PidMode": "", 
+                    "PidsLimit": 0, 
+                    "PortBindings": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "Privileged": false, 
+                    "PublishAllPorts": false, 
+                    "ReadonlyRootfs": false, 
+                    "RestartPolicy": {
+                        "MaximumRetryCount": 0, 
+                        "Name": ""
+                    }, 
+                    "Runtime": "runc", 
+                    "SecurityOpt": null, 
+                    "ShmSize": 67108864, 
+                    "UTSMode": "", 
+                    "Ulimits": null, 
+                    "UsernsMode": "", 
+                    "VolumeDriver": "", 
+                    "VolumesFrom": null
+                }, 
+                "HostnamePath": "/var/lib/docker/containers/24e7cceee007fa2a3964cd242996f262e00c44a7ee1340416ff97253cbe10c4e/hostname", 
+                "HostsPath": "/var/lib/docker/containers/24e7cceee007fa2a3964cd242996f262e00c44a7ee1340416ff97253cbe10c4e/hosts", 
+                "Id": "24e7cceee007fa2a3964cd242996f262e00c44a7ee1340416ff97253cbe10c4e", 
+                "Image": "sha256:643c21638c1c966fe18ca1cc8547dd401df70e85d83ca6de76b9a7957703b993", 
+                "LogPath": "/var/lib/docker/containers/24e7cceee007fa2a3964cd242996f262e00c44a7ee1340416ff97253cbe10c4e/24e7cceee007fa2a3964cd242996f262e00c44a7ee1340416ff97253cbe10c4e-json.log", 
+                "MountLabel": "", 
+                "Mounts": [
+                    {
+                        "Destination": "/etcd-data", 
+                        "Mode": "rw", 
+                        "Propagation": "rprivate", 
+                        "RW": true, 
+                        "Source": "/home/ccma/etcd", 
+                        "Type": "bind"
+                    }
+                ], 
+                "Name": "/etcd", 
+                "NetworkSettings": {
+                    "Bridge": "", 
+                    "EndpointID": "ca0c8e777dab3028ce514df1a386f4b386b027f4fdaed867359dbef68e3c20a2", 
+                    "Gateway": "172.17.0.1", 
+                    "GlobalIPv6Address": "", 
+                    "GlobalIPv6PrefixLen": 0, 
+                    "HairpinMode": false, 
+                    "IPAddress": "172.17.0.2", 
+                    "IPPrefixLen": 16, 
+                    "IPv6Gateway": "", 
+                    "LinkLocalIPv6Address": "", 
+                    "LinkLocalIPv6PrefixLen": 0, 
+                    "MacAddress": "02:42:ac:11:00:02", 
+                    "Networks": {
+                        "bridge": {
+                            "Aliases": null, 
+                            "EndpointID": "ca0c8e777dab3028ce514df1a386f4b386b027f4fdaed867359dbef68e3c20a2", 
+                            "Gateway": "172.17.0.1", 
+                            "GlobalIPv6Address": "", 
+                            "GlobalIPv6PrefixLen": 0, 
+                            "IPAMConfig": null, 
+                            "IPAddress": "172.17.0.2", 
+                            "IPPrefixLen": 16, 
+                            "IPv6Gateway": "", 
+                            "Links": null, 
+                            "MacAddress": "02:42:ac:11:00:02", 
+                            "NetworkID": "5801fbad92c8ffe2864a5a9966e578f93380bbb57dae0cecb73214257a2c02a2"
+                        }
+                    }, 
+                    "Ports": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "SandboxID": "3e27469703194c128cca9805f59707cfffc77782211902763fc6334f07c66bf1", 
+                    "SandboxKey": "/var/run/docker/netns/3e2746970319", 
+                    "SecondaryIPAddresses": null, 
+                    "SecondaryIPv6Addresses": null
+                }, 
+                "Path": "/usr/local/bin/etcd", 
+                "ProcessLabel": "", 
+                "ResolvConfPath": "/var/lib/docker/containers/24e7cceee007fa2a3964cd242996f262e00c44a7ee1340416ff97253cbe10c4e/resolv.conf", 
+                "RestartCount": 0, 
+                "State": {
+                    "Dead": false, 
+                    "Error": "", 
+                    "ExitCode": 0, 
+                    "FinishedAt": "0001-01-01T00:00:00Z", 
+                    "OOMKilled": false, 
+                    "Paused": false, 
+                    "Pid": 30117, 
+                    "Restarting": false, 
+                    "Running": true, 
+                    "StartedAt": "2018-11-01T05:29:00.194449171Z", 
+                    "Status": "running"
+                }
+            }
+        }, 
+        "changed": true, 
+        "failed": false
+    }
+}
+2018-11-01 13:29:03,922 p=9122 u=yungshun |  ok: [10.236.1.3] => {
+    "run_etcd_cluster": {
+        "ansible_facts": {
+            "docker_container": {
+                "AppArmorProfile": "", 
+                "Args": [
+                    "--data-dir=/etcd-data", 
+                    "--name", 
+                    "etcd3", 
+                    "--initial-advertise-peer-urls", 
+                    "http://10.236.1.3:2380", 
+                    "--listen-peer-urls", 
+                    "http://0.0.0.0:2380", 
+                    "--advertise-client-urls", 
+                    "http://10.236.1.3:2379", 
+                    "--listen-client-urls", 
+                    "http://0.0.0.0:2379", 
+                    "--initial-cluster", 
+                    "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                    "--initial-cluster-state", 
+                    "new", 
+                    "--initial-cluster-token", 
+                    "etcd-cluster"
+                ], 
+                "Config": {
+                    "AttachStderr": false, 
+                    "AttachStdin": false, 
+                    "AttachStdout": false, 
+                    "Cmd": [
+                        "/usr/local/bin/etcd", 
+                        "--data-dir=/etcd-data", 
+                        "--name", 
+                        "etcd3", 
+                        "--initial-advertise-peer-urls", 
+                        "http://10.236.1.3:2380", 
+                        "--listen-peer-urls", 
+                        "http://0.0.0.0:2380", 
+                        "--advertise-client-urls", 
+                        "http://10.236.1.3:2379", 
+                        "--listen-client-urls", 
+                        "http://0.0.0.0:2379", 
+                        "--initial-cluster", 
+                        "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                        "--initial-cluster-state", 
+                        "new", 
+                        "--initial-cluster-token", 
+                        "etcd-cluster"
+                    ], 
+                    "Domainname": "", 
+                    "Entrypoint": null, 
+                    "Env": [
+                        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+                    ], 
+                    "ExposedPorts": {
+                        "2379/tcp": {}, 
+                        "2380/tcp": {}
+                    }, 
+                    "Hostname": "ef93ef9b6ef2", 
+                    "Image": "gcr.io/etcd-development/etcd:latest", 
+                    "Labels": {}, 
+                    "OnBuild": null, 
+                    "OpenStdin": false, 
+                    "StdinOnce": false, 
+                    "Tty": false, 
+                    "User": "", 
+                    "Volumes": {
+                        "/etcd-data": {}
+                    }, 
+                    "WorkingDir": ""
+                }, 
+                "Created": "2018-11-01T05:28:38.556754421Z", 
+                "Driver": "aufs", 
+                "ExecIDs": null, 
+                "GraphDriver": {
+                    "Data": null, 
+                    "Name": "aufs"
+                }, 
+                "HostConfig": {
+                    "AutoRemove": false, 
+                    "Binds": [
+                        "/home/ccma/etcd:/etcd-data:rw"
+                    ], 
+                    "BlkioDeviceReadBps": null, 
+                    "BlkioDeviceReadIOps": null, 
+                    "BlkioDeviceWriteBps": null, 
+                    "BlkioDeviceWriteIOps": null, 
+                    "BlkioWeight": 0, 
+                    "BlkioWeightDevice": null, 
+                    "CapAdd": null, 
+                    "CapDrop": null, 
+                    "Cgroup": "", 
+                    "CgroupParent": "", 
+                    "ConsoleSize": [
+                        0, 
+                        0
+                    ], 
+                    "ContainerIDFile": "", 
+                    "CpuCount": 0, 
+                    "CpuPercent": 0, 
+                    "CpuPeriod": 0, 
+                    "CpuQuota": 0, 
+                    "CpuRealtimePeriod": 0, 
+                    "CpuRealtimeRuntime": 0, 
+                    "CpuShares": 0, 
+                    "CpusetCpus": "", 
+                    "CpusetMems": "", 
+                    "Devices": null, 
+                    "DiskQuota": 0, 
+                    "Dns": null, 
+                    "DnsOptions": null, 
+                    "DnsSearch": null, 
+                    "ExtraHosts": null, 
+                    "GroupAdd": null, 
+                    "IOMaximumBandwidth": 0, 
+                    "IOMaximumIOps": 0, 
+                    "Init": false, 
+                    "IpcMode": "", 
+                    "Isolation": "", 
+                    "KernelMemory": 0, 
+                    "Links": null, 
+                    "LogConfig": {
+                        "Config": {}, 
+                        "Type": "json-file"
+                    }, 
+                    "Memory": 0, 
+                    "MemoryReservation": 0, 
+                    "MemorySwap": 0, 
+                    "MemorySwappiness": -1, 
+                    "NanoCpus": 0, 
+                    "NetworkMode": "default", 
+                    "OomKillDisable": false, 
+                    "OomScoreAdj": 0, 
+                    "PidMode": "", 
+                    "PidsLimit": 0, 
+                    "PortBindings": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "Privileged": false, 
+                    "PublishAllPorts": false, 
+                    "ReadonlyRootfs": false, 
+                    "RestartPolicy": {
+                        "MaximumRetryCount": 0, 
+                        "Name": ""
+                    }, 
+                    "Runtime": "runc", 
+                    "SecurityOpt": null, 
+                    "ShmSize": 67108864, 
+                    "UTSMode": "", 
+                    "Ulimits": null, 
+                    "UsernsMode": "", 
+                    "VolumeDriver": "", 
+                    "VolumesFrom": null
+                }, 
+                "HostnamePath": "/var/lib/docker/containers/ef93ef9b6ef2f92c6da6195259f32c1644e2d15712e30e0d0e92e12892121e6a/hostname", 
+                "HostsPath": "/var/lib/docker/containers/ef93ef9b6ef2f92c6da6195259f32c1644e2d15712e30e0d0e92e12892121e6a/hosts", 
+                "Id": "ef93ef9b6ef2f92c6da6195259f32c1644e2d15712e30e0d0e92e12892121e6a", 
+                "Image": "sha256:643c21638c1c966fe18ca1cc8547dd401df70e85d83ca6de76b9a7957703b993", 
+                "LogPath": "/var/lib/docker/containers/ef93ef9b6ef2f92c6da6195259f32c1644e2d15712e30e0d0e92e12892121e6a/ef93ef9b6ef2f92c6da6195259f32c1644e2d15712e30e0d0e92e12892121e6a-json.log", 
+                "MountLabel": "", 
+                "Mounts": [
+                    {
+                        "Destination": "/etcd-data", 
+                        "Mode": "rw", 
+                        "Propagation": "rprivate", 
+                        "RW": true, 
+                        "Source": "/home/ccma/etcd", 
+                        "Type": "bind"
+                    }
+                ], 
+                "Name": "/etcd", 
+                "NetworkSettings": {
+                    "Bridge": "", 
+                    "EndpointID": "6cbebd35a648981f0aa6b1da48a7fe7d7a3170477a09ce5752771de219750d59", 
+                    "Gateway": "172.17.0.1", 
+                    "GlobalIPv6Address": "", 
+                    "GlobalIPv6PrefixLen": 0, 
+                    "HairpinMode": false, 
+                    "IPAddress": "172.17.0.2", 
+                    "IPPrefixLen": 16, 
+                    "IPv6Gateway": "", 
+                    "LinkLocalIPv6Address": "", 
+                    "LinkLocalIPv6PrefixLen": 0, 
+                    "MacAddress": "02:42:ac:11:00:02", 
+                    "Networks": {
+                        "bridge": {
+                            "Aliases": null, 
+                            "EndpointID": "6cbebd35a648981f0aa6b1da48a7fe7d7a3170477a09ce5752771de219750d59", 
+                            "Gateway": "172.17.0.1", 
+                            "GlobalIPv6Address": "", 
+                            "GlobalIPv6PrefixLen": 0, 
+                            "IPAMConfig": null, 
+                            "IPAddress": "172.17.0.2", 
+                            "IPPrefixLen": 16, 
+                            "IPv6Gateway": "", 
+                            "Links": null, 
+                            "MacAddress": "02:42:ac:11:00:02", 
+                            "NetworkID": "f00e6b87317a9ba039bbbf3e7092ffa618b1b8d7783004ffaea0e149534185da"
+                        }
+                    }, 
+                    "Ports": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "SandboxID": "d288a4debe7b9f87738a0a281b09dff056da34b3fb007fad64f2539a43245138", 
+                    "SandboxKey": "/var/run/docker/netns/d288a4debe7b", 
+                    "SecondaryIPAddresses": null, 
+                    "SecondaryIPv6Addresses": null
+                }, 
+                "Path": "/usr/local/bin/etcd", 
+                "ProcessLabel": "", 
+                "ResolvConfPath": "/var/lib/docker/containers/ef93ef9b6ef2f92c6da6195259f32c1644e2d15712e30e0d0e92e12892121e6a/resolv.conf", 
+                "RestartCount": 0, 
+                "State": {
+                    "Dead": false, 
+                    "Error": "", 
+                    "ExitCode": 0, 
+                    "FinishedAt": "0001-01-01T00:00:00Z", 
+                    "OOMKilled": false, 
+                    "Paused": false, 
+                    "Pid": 26024, 
+                    "Restarting": false, 
+                    "Running": true, 
+                    "StartedAt": "2018-11-01T05:29:03.240421932Z", 
+                    "Status": "running"
+                }
+            }
+        }, 
+        "changed": true, 
+        "failed": false
+    }
+}
+2018-11-01 13:29:03,931 p=9122 u=yungshun |  PLAY [etcd1] *******************************************************************
+2018-11-01 13:29:04,023 p=9122 u=yungshun |  TASK [Delete a network, disconnecting all containers] **************************
+2018-11-01 13:29:05,446 p=9122 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:29:05,716 p=9122 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:29:05,736 p=9122 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:29:05,818 p=9122 u=yungshun |  TASK [Create a network] ********************************************************
+2018-11-01 13:29:06,594 p=9122 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 13:29:06,667 p=9122 u=yungshun |  fatal: [10.236.1.3]: FAILED! => {"changed": true, "cmd": "docker network create -d overlay network_etcd", "delta": "0:00:00.170307", "end": "2018-11-01 13:29:06.593880", "msg": "non-zero return code", "rc": 1, "start": "2018-11-01 13:29:06.423573", "stderr": "Error response from daemon: network with name network_etcd already exists", "stderr_lines": ["Error response from daemon: network with name network_etcd already exists"], "stdout": "", "stdout_lines": []}
+2018-11-01 13:29:06,864 p=9122 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 13:29:06,866 p=9122 u=yungshun |  	to retry, use: --limit @/home/yungshun/workspace/ansible/ansible-docker-etcd-cluster-remote/etcd-cluster.retry
+
+2018-11-01 13:29:06,866 p=9122 u=yungshun |  PLAY RECAP *********************************************************************
+2018-11-01 13:29:06,866 p=9122 u=yungshun |  10.236.1.1                 : ok=18   changed=8    unreachable=0    failed=0   
+2018-11-01 13:29:06,867 p=9122 u=yungshun |  10.236.1.2                 : ok=18   changed=8    unreachable=0    failed=0   
+2018-11-01 13:29:06,867 p=9122 u=yungshun |  10.236.1.3                 : ok=17   changed=7    unreachable=0    failed=1   
+2018-11-01 13:32:06,877 p=9940 u=yungshun |  PLAY [etcd] ********************************************************************
+2018-11-01 13:32:06,886 p=9940 u=yungshun |  TASK [Install Python 2.7] ******************************************************
+2018-11-01 13:32:08,259 p=9940 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:32:08,265 p=9940 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:32:08,306 p=9940 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:32:08,315 p=9940 u=yungshun |  TASK [Gather facts after Python is definitely present] *************************
+2018-11-01 13:32:09,420 p=9940 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:32:09,650 p=9940 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:32:09,669 p=9940 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:32:09,728 p=9940 u=yungshun |  TASK [Install pip and docker.io] ***********************************************
+2018-11-01 13:32:11,182 p=9940 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:32:11,225 p=9940 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:32:11,243 p=9940 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:32:11,309 p=9940 u=yungshun |  TASK [Install Docker Python library] *******************************************
+2018-11-01 13:32:13,007 p=9940 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:32:13,034 p=9940 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:32:13,078 p=9940 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:32:13,148 p=9940 u=yungshun |  TASK [Add ccma to the docker group] ********************************************
+2018-11-01 13:32:13,949 p=9940 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 13:32:13,957 p=9940 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 13:32:13,972 p=9940 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 13:32:14,040 p=9940 u=yungshun |  TASK [Reboot immediately if there was a change] ********************************
+2018-11-01 13:32:15,545 p=9940 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 13:32:15,650 p=9940 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 13:32:15,807 p=9940 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 13:32:15,868 p=9940 u=yungshun |  TASK [Wait for the reboot to complete if there was a change] *******************
+2018-11-01 13:32:22,599 p=9940 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:32:22,604 p=9940 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:32:22,641 p=9940 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:32:22,711 p=9940 u=yungshun |  TASK [Install pexpect] *********************************************************
+2018-11-01 13:32:23,983 p=9940 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:32:24,164 p=9940 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:32:24,232 p=9940 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:32:24,299 p=9940 u=yungshun |  TASK [Stop Docker engine] ******************************************************
+2018-11-01 13:32:25,278 p=9940 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 13:32:25,290 p=9940 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 13:32:25,321 p=9940 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 13:32:25,389 p=9940 u=yungshun |  TASK [Restart Docker engine with cluster configuration] ************************
+2018-11-01 13:32:25,890 p=9940 u=yungshun |  changed: [10.236.1.1] => (item=nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://10.236.1.1:2379 --cluster-advertise=10.236.1.1:2375 >/dev/null 2>&1 &)
+2018-11-01 13:32:26,028 p=9940 u=yungshun |  changed: [10.236.1.2] => (item=nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://10.236.1.2:2379 --cluster-advertise=10.236.1.2:2375 >/dev/null 2>&1 &)
+2018-11-01 13:32:26,104 p=9940 u=yungshun |  changed: [10.236.1.3] => (item=nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://10.236.1.3:2379 --cluster-advertise=10.236.1.3:2375 >/dev/null 2>&1 &)
+2018-11-01 13:32:26,171 p=9940 u=yungshun |  TASK [Create a directory for mounting host volume] *****************************
+2018-11-01 13:32:26,898 p=9940 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:32:26,900 p=9940 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:32:26,902 p=9940 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:32:26,971 p=9940 u=yungshun |  TASK [Check for containers that actually exist] ********************************
+2018-11-01 13:32:27,470 p=9940 u=yungshun |  changed: [10.236.1.1] => (item=etcd)
+2018-11-01 13:32:27,579 p=9940 u=yungshun |  changed: [10.236.1.2] => (item=etcd)
+2018-11-01 13:32:27,673 p=9940 u=yungshun |  changed: [10.236.1.3] => (item=etcd)
+2018-11-01 13:32:27,743 p=9940 u=yungshun |  TASK [Remove the containers found by the above command] ************************
+2018-11-01 13:32:28,897 p=9940 u=yungshun |  changed: [10.236.1.1] => (item={'_ansible_parsed': True, 'stderr_lines': [], u'changed': True, u'stdout': u'93ccae560b8b', '_ansible_item_result': True, u'delta': u'0:00:00.018903', 'stdout_lines': [u'93ccae560b8b'], '_ansible_item_label': u'etcd', u'end': u'2018-11-01 13:32:27.395308', '_ansible_no_log': False, 'failed': False, u'cmd': u'docker ps -aq --filter "name=etcd"', 'item': u'etcd', u'stderr': u'', u'rc': 0, u'invocation': {u'module_args': {u'warn': True, u'executable': None, u'_uses_shell': True, u'_raw_params': u'docker ps -aq --filter "name=etcd"', u'removes': None, u'argv': None, u'creates': None, u'chdir': None, u'stdin': None}}, u'start': u'2018-11-01 13:32:27.376405', '_ansible_ignore_errors': None})
+2018-11-01 13:32:29,398 p=9940 u=yungshun |  changed: [10.236.1.3] => (item={'_ansible_parsed': True, 'stderr_lines': [], u'changed': True, u'stdout': u'ef93ef9b6ef2', '_ansible_item_result': True, u'delta': u'0:00:00.017819', 'stdout_lines': [u'ef93ef9b6ef2'], '_ansible_item_label': u'etcd', u'end': u'2018-11-01 13:32:27.598551', '_ansible_no_log': False, 'failed': False, u'cmd': u'docker ps -aq --filter "name=etcd"', 'item': u'etcd', u'stderr': u'', u'rc': 0, u'invocation': {u'module_args': {u'warn': True, u'executable': None, u'_uses_shell': True, u'_raw_params': u'docker ps -aq --filter "name=etcd"', u'removes': None, u'argv': None, u'creates': None, u'chdir': None, u'stdin': None}}, u'start': u'2018-11-01 13:32:27.580732', '_ansible_ignore_errors': None})
+2018-11-01 13:32:35,888 p=9940 u=yungshun |  changed: [10.236.1.2] => (item={'_ansible_parsed': True, 'stderr_lines': [], u'changed': True, u'stdout': u'24e7cceee007', '_ansible_item_result': True, u'delta': u'0:00:00.016899', 'stdout_lines': [u'24e7cceee007'], '_ansible_item_label': u'etcd', u'end': u'2018-11-01 13:32:27.502925', '_ansible_no_log': False, 'failed': False, u'cmd': u'docker ps -aq --filter "name=etcd"', 'item': u'etcd', u'stderr': u'', u'rc': 0, u'invocation': {u'module_args': {u'warn': True, u'executable': None, u'_uses_shell': True, u'_raw_params': u'docker ps -aq --filter "name=etcd"', u'removes': None, u'argv': None, u'creates': None, u'chdir': None, u'stdin': None}}, u'start': u'2018-11-01 13:32:27.486026', '_ansible_ignore_errors': None})
+2018-11-01 13:32:35,955 p=9940 u=yungshun |  TASK [Debug] *******************************************************************
+2018-11-01 13:32:36,187 p=9940 u=yungshun |  ok: [10.236.1.1] => {
+    "hostvars[inventory_hostname]['etcd_name']": "etcd1"
+}
+2018-11-01 13:32:36,279 p=9940 u=yungshun |  ok: [10.236.1.2] => {
+    "hostvars[inventory_hostname]['etcd_name']": "etcd2"
+}
+2018-11-01 13:32:36,380 p=9940 u=yungshun |  ok: [10.236.1.3] => {
+    "hostvars[inventory_hostname]['etcd_name']": "etcd3"
+}
+2018-11-01 13:32:36,447 p=9940 u=yungshun |  TASK [Run a 3 node etcd cluster] ***********************************************
+2018-11-01 13:32:38,375 p=9940 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 13:33:01,704 p=9940 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 13:33:01,910 p=9940 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 13:33:01,987 p=9940 u=yungshun |  TASK [Debug run_etcd_cluster] **************************************************
+2018-11-01 13:33:02,344 p=9940 u=yungshun |  ok: [10.236.1.1] => {
+    "run_etcd_cluster": {
+        "ansible_facts": {
+            "docker_container": {
+                "AppArmorProfile": "", 
+                "Args": [
+                    "--data-dir=/etcd-data", 
+                    "--name", 
+                    "etcd1", 
+                    "--initial-advertise-peer-urls", 
+                    "http://10.236.1.1:2380", 
+                    "--listen-peer-urls", 
+                    "http://0.0.0.0:2380", 
+                    "--advertise-client-urls", 
+                    "http://10.236.1.1:2379", 
+                    "--listen-client-urls", 
+                    "http://0.0.0.0:2379", 
+                    "--initial-cluster", 
+                    "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                    "--initial-cluster-state", 
+                    "new", 
+                    "--initial-cluster-token", 
+                    "etcd-cluster"
+                ], 
+                "Config": {
+                    "AttachStderr": false, 
+                    "AttachStdin": false, 
+                    "AttachStdout": false, 
+                    "Cmd": [
+                        "/usr/local/bin/etcd", 
+                        "--data-dir=/etcd-data", 
+                        "--name", 
+                        "etcd1", 
+                        "--initial-advertise-peer-urls", 
+                        "http://10.236.1.1:2380", 
+                        "--listen-peer-urls", 
+                        "http://0.0.0.0:2380", 
+                        "--advertise-client-urls", 
+                        "http://10.236.1.1:2379", 
+                        "--listen-client-urls", 
+                        "http://0.0.0.0:2379", 
+                        "--initial-cluster", 
+                        "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                        "--initial-cluster-state", 
+                        "new", 
+                        "--initial-cluster-token", 
+                        "etcd-cluster"
+                    ], 
+                    "Domainname": "", 
+                    "Entrypoint": null, 
+                    "Env": [
+                        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+                    ], 
+                    "ExposedPorts": {
+                        "2379/tcp": {}, 
+                        "2380/tcp": {}
+                    }, 
+                    "Hostname": "fa9d3e33868a", 
+                    "Image": "gcr.io/etcd-development/etcd:latest", 
+                    "Labels": {}, 
+                    "OnBuild": null, 
+                    "OpenStdin": false, 
+                    "StdinOnce": false, 
+                    "Tty": false, 
+                    "User": "", 
+                    "Volumes": {
+                        "/etcd-data": {}
+                    }, 
+                    "WorkingDir": ""
+                }, 
+                "Created": "2018-11-01T05:32:37.423867132Z", 
+                "Driver": "aufs", 
+                "ExecIDs": null, 
+                "GraphDriver": {
+                    "Data": null, 
+                    "Name": "aufs"
+                }, 
+                "HostConfig": {
+                    "AutoRemove": false, 
+                    "Binds": [
+                        "/home/ccma/etcd:/etcd-data:rw"
+                    ], 
+                    "BlkioDeviceReadBps": null, 
+                    "BlkioDeviceReadIOps": null, 
+                    "BlkioDeviceWriteBps": null, 
+                    "BlkioDeviceWriteIOps": null, 
+                    "BlkioWeight": 0, 
+                    "BlkioWeightDevice": null, 
+                    "CapAdd": null, 
+                    "CapDrop": null, 
+                    "Cgroup": "", 
+                    "CgroupParent": "", 
+                    "ConsoleSize": [
+                        0, 
+                        0
+                    ], 
+                    "ContainerIDFile": "", 
+                    "CpuCount": 0, 
+                    "CpuPercent": 0, 
+                    "CpuPeriod": 0, 
+                    "CpuQuota": 0, 
+                    "CpuRealtimePeriod": 0, 
+                    "CpuRealtimeRuntime": 0, 
+                    "CpuShares": 0, 
+                    "CpusetCpus": "", 
+                    "CpusetMems": "", 
+                    "Devices": null, 
+                    "DiskQuota": 0, 
+                    "Dns": null, 
+                    "DnsOptions": null, 
+                    "DnsSearch": null, 
+                    "ExtraHosts": null, 
+                    "GroupAdd": null, 
+                    "IOMaximumBandwidth": 0, 
+                    "IOMaximumIOps": 0, 
+                    "Init": false, 
+                    "IpcMode": "", 
+                    "Isolation": "", 
+                    "KernelMemory": 0, 
+                    "Links": null, 
+                    "LogConfig": {
+                        "Config": {}, 
+                        "Type": "json-file"
+                    }, 
+                    "Memory": 0, 
+                    "MemoryReservation": 0, 
+                    "MemorySwap": 0, 
+                    "MemorySwappiness": -1, 
+                    "NanoCpus": 0, 
+                    "NetworkMode": "default", 
+                    "OomKillDisable": false, 
+                    "OomScoreAdj": 0, 
+                    "PidMode": "", 
+                    "PidsLimit": 0, 
+                    "PortBindings": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "Privileged": false, 
+                    "PublishAllPorts": false, 
+                    "ReadonlyRootfs": false, 
+                    "RestartPolicy": {
+                        "MaximumRetryCount": 0, 
+                        "Name": ""
+                    }, 
+                    "Runtime": "runc", 
+                    "SecurityOpt": null, 
+                    "ShmSize": 67108864, 
+                    "UTSMode": "", 
+                    "Ulimits": null, 
+                    "UsernsMode": "", 
+                    "VolumeDriver": "", 
+                    "VolumesFrom": null
+                }, 
+                "HostnamePath": "/var/lib/docker/containers/fa9d3e33868a7a2aaa2bf09a5972296a39e7df892959d268da0ebcec66459a66/hostname", 
+                "HostsPath": "/var/lib/docker/containers/fa9d3e33868a7a2aaa2bf09a5972296a39e7df892959d268da0ebcec66459a66/hosts", 
+                "Id": "fa9d3e33868a7a2aaa2bf09a5972296a39e7df892959d268da0ebcec66459a66", 
+                "Image": "sha256:643c21638c1c966fe18ca1cc8547dd401df70e85d83ca6de76b9a7957703b993", 
+                "LogPath": "/var/lib/docker/containers/fa9d3e33868a7a2aaa2bf09a5972296a39e7df892959d268da0ebcec66459a66/fa9d3e33868a7a2aaa2bf09a5972296a39e7df892959d268da0ebcec66459a66-json.log", 
+                "MountLabel": "", 
+                "Mounts": [
+                    {
+                        "Destination": "/etcd-data", 
+                        "Mode": "rw", 
+                        "Propagation": "rprivate", 
+                        "RW": true, 
+                        "Source": "/home/ccma/etcd", 
+                        "Type": "bind"
+                    }
+                ], 
+                "Name": "/etcd", 
+                "NetworkSettings": {
+                    "Bridge": "", 
+                    "EndpointID": "74b61be9dfdf3ffd8d0ada6d3ebc92c309dfe4d11e0bc438410282b8f4802315", 
+                    "Gateway": "172.17.0.1", 
+                    "GlobalIPv6Address": "", 
+                    "GlobalIPv6PrefixLen": 0, 
+                    "HairpinMode": false, 
+                    "IPAddress": "172.17.0.2", 
+                    "IPPrefixLen": 16, 
+                    "IPv6Gateway": "", 
+                    "LinkLocalIPv6Address": "", 
+                    "LinkLocalIPv6PrefixLen": 0, 
+                    "MacAddress": "02:42:ac:11:00:02", 
+                    "Networks": {
+                        "bridge": {
+                            "Aliases": null, 
+                            "EndpointID": "74b61be9dfdf3ffd8d0ada6d3ebc92c309dfe4d11e0bc438410282b8f4802315", 
+                            "Gateway": "172.17.0.1", 
+                            "GlobalIPv6Address": "", 
+                            "GlobalIPv6PrefixLen": 0, 
+                            "IPAMConfig": null, 
+                            "IPAddress": "172.17.0.2", 
+                            "IPPrefixLen": 16, 
+                            "IPv6Gateway": "", 
+                            "Links": null, 
+                            "MacAddress": "02:42:ac:11:00:02", 
+                            "NetworkID": "257a2e393f2cb46831636aef37ac7f8f48b068c0a8937a34aa735f25b18e603c"
+                        }
+                    }, 
+                    "Ports": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "SandboxID": "34a3a527cf57306c3fd17e054fa095fee86353d2af8278afedd0e9dc29636359", 
+                    "SandboxKey": "/var/run/docker/netns/34a3a527cf57", 
+                    "SecondaryIPAddresses": null, 
+                    "SecondaryIPv6Addresses": null
+                }, 
+                "Path": "/usr/local/bin/etcd", 
+                "ProcessLabel": "", 
+                "ResolvConfPath": "/var/lib/docker/containers/fa9d3e33868a7a2aaa2bf09a5972296a39e7df892959d268da0ebcec66459a66/resolv.conf", 
+                "RestartCount": 0, 
+                "State": {
+                    "Dead": false, 
+                    "Error": "", 
+                    "ExitCode": 0, 
+                    "FinishedAt": "0001-01-01T00:00:00Z", 
+                    "OOMKilled": false, 
+                    "Paused": false, 
+                    "Pid": 15181, 
+                    "Restarting": false, 
+                    "Running": true, 
+                    "StartedAt": "2018-11-01T05:32:38.239927715Z", 
+                    "Status": "running"
+                }
+            }
+        }, 
+        "changed": true, 
+        "failed": false
+    }
+}
+2018-11-01 13:33:02,416 p=9940 u=yungshun |  ok: [10.236.1.2] => {
+    "run_etcd_cluster": {
+        "ansible_facts": {
+            "docker_container": {
+                "AppArmorProfile": "", 
+                "Args": [
+                    "--data-dir=/etcd-data", 
+                    "--name", 
+                    "etcd2", 
+                    "--initial-advertise-peer-urls", 
+                    "http://10.236.1.2:2380", 
+                    "--listen-peer-urls", 
+                    "http://0.0.0.0:2380", 
+                    "--advertise-client-urls", 
+                    "http://10.236.1.2:2379", 
+                    "--listen-client-urls", 
+                    "http://0.0.0.0:2379", 
+                    "--initial-cluster", 
+                    "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                    "--initial-cluster-state", 
+                    "new", 
+                    "--initial-cluster-token", 
+                    "etcd-cluster"
+                ], 
+                "Config": {
+                    "AttachStderr": false, 
+                    "AttachStdin": false, 
+                    "AttachStdout": false, 
+                    "Cmd": [
+                        "/usr/local/bin/etcd", 
+                        "--data-dir=/etcd-data", 
+                        "--name", 
+                        "etcd2", 
+                        "--initial-advertise-peer-urls", 
+                        "http://10.236.1.2:2380", 
+                        "--listen-peer-urls", 
+                        "http://0.0.0.0:2380", 
+                        "--advertise-client-urls", 
+                        "http://10.236.1.2:2379", 
+                        "--listen-client-urls", 
+                        "http://0.0.0.0:2379", 
+                        "--initial-cluster", 
+                        "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                        "--initial-cluster-state", 
+                        "new", 
+                        "--initial-cluster-token", 
+                        "etcd-cluster"
+                    ], 
+                    "Domainname": "", 
+                    "Entrypoint": null, 
+                    "Env": [
+                        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+                    ], 
+                    "ExposedPorts": {
+                        "2379/tcp": {}, 
+                        "2380/tcp": {}
+                    }, 
+                    "Hostname": "f461b132be2e", 
+                    "Image": "gcr.io/etcd-development/etcd:latest", 
+                    "Labels": {}, 
+                    "OnBuild": null, 
+                    "OpenStdin": false, 
+                    "StdinOnce": false, 
+                    "Tty": false, 
+                    "User": "", 
+                    "Volumes": {
+                        "/etcd-data": {}
+                    }, 
+                    "WorkingDir": ""
+                }, 
+                "Created": "2018-11-01T05:32:37.411603313Z", 
+                "Driver": "aufs", 
+                "ExecIDs": null, 
+                "GraphDriver": {
+                    "Data": null, 
+                    "Name": "aufs"
+                }, 
+                "HostConfig": {
+                    "AutoRemove": false, 
+                    "Binds": [
+                        "/home/ccma/etcd:/etcd-data:rw"
+                    ], 
+                    "BlkioDeviceReadBps": null, 
+                    "BlkioDeviceReadIOps": null, 
+                    "BlkioDeviceWriteBps": null, 
+                    "BlkioDeviceWriteIOps": null, 
+                    "BlkioWeight": 0, 
+                    "BlkioWeightDevice": null, 
+                    "CapAdd": null, 
+                    "CapDrop": null, 
+                    "Cgroup": "", 
+                    "CgroupParent": "", 
+                    "ConsoleSize": [
+                        0, 
+                        0
+                    ], 
+                    "ContainerIDFile": "", 
+                    "CpuCount": 0, 
+                    "CpuPercent": 0, 
+                    "CpuPeriod": 0, 
+                    "CpuQuota": 0, 
+                    "CpuRealtimePeriod": 0, 
+                    "CpuRealtimeRuntime": 0, 
+                    "CpuShares": 0, 
+                    "CpusetCpus": "", 
+                    "CpusetMems": "", 
+                    "Devices": null, 
+                    "DiskQuota": 0, 
+                    "Dns": null, 
+                    "DnsOptions": null, 
+                    "DnsSearch": null, 
+                    "ExtraHosts": null, 
+                    "GroupAdd": null, 
+                    "IOMaximumBandwidth": 0, 
+                    "IOMaximumIOps": 0, 
+                    "Init": false, 
+                    "IpcMode": "", 
+                    "Isolation": "", 
+                    "KernelMemory": 0, 
+                    "Links": null, 
+                    "LogConfig": {
+                        "Config": {}, 
+                        "Type": "json-file"
+                    }, 
+                    "Memory": 0, 
+                    "MemoryReservation": 0, 
+                    "MemorySwap": 0, 
+                    "MemorySwappiness": -1, 
+                    "NanoCpus": 0, 
+                    "NetworkMode": "default", 
+                    "OomKillDisable": false, 
+                    "OomScoreAdj": 0, 
+                    "PidMode": "", 
+                    "PidsLimit": 0, 
+                    "PortBindings": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "Privileged": false, 
+                    "PublishAllPorts": false, 
+                    "ReadonlyRootfs": false, 
+                    "RestartPolicy": {
+                        "MaximumRetryCount": 0, 
+                        "Name": ""
+                    }, 
+                    "Runtime": "runc", 
+                    "SecurityOpt": null, 
+                    "ShmSize": 67108864, 
+                    "UTSMode": "", 
+                    "Ulimits": null, 
+                    "UsernsMode": "", 
+                    "VolumeDriver": "", 
+                    "VolumesFrom": null
+                }, 
+                "HostnamePath": "/var/lib/docker/containers/f461b132be2e422eca667bfce140bf230d4d7144ff1f30643e5451b551eaf221/hostname", 
+                "HostsPath": "/var/lib/docker/containers/f461b132be2e422eca667bfce140bf230d4d7144ff1f30643e5451b551eaf221/hosts", 
+                "Id": "f461b132be2e422eca667bfce140bf230d4d7144ff1f30643e5451b551eaf221", 
+                "Image": "sha256:643c21638c1c966fe18ca1cc8547dd401df70e85d83ca6de76b9a7957703b993", 
+                "LogPath": "/var/lib/docker/containers/f461b132be2e422eca667bfce140bf230d4d7144ff1f30643e5451b551eaf221/f461b132be2e422eca667bfce140bf230d4d7144ff1f30643e5451b551eaf221-json.log", 
+                "MountLabel": "", 
+                "Mounts": [
+                    {
+                        "Destination": "/etcd-data", 
+                        "Mode": "rw", 
+                        "Propagation": "rprivate", 
+                        "RW": true, 
+                        "Source": "/home/ccma/etcd", 
+                        "Type": "bind"
+                    }
+                ], 
+                "Name": "/etcd", 
+                "NetworkSettings": {
+                    "Bridge": "", 
+                    "EndpointID": "b32481f88da5c07d6e5bdc1f63f25dec0db047df5c000270ed252363b0be56a4", 
+                    "Gateway": "172.17.0.1", 
+                    "GlobalIPv6Address": "", 
+                    "GlobalIPv6PrefixLen": 0, 
+                    "HairpinMode": false, 
+                    "IPAddress": "172.17.0.2", 
+                    "IPPrefixLen": 16, 
+                    "IPv6Gateway": "", 
+                    "LinkLocalIPv6Address": "", 
+                    "LinkLocalIPv6PrefixLen": 0, 
+                    "MacAddress": "02:42:ac:11:00:02", 
+                    "Networks": {
+                        "bridge": {
+                            "Aliases": null, 
+                            "EndpointID": "b32481f88da5c07d6e5bdc1f63f25dec0db047df5c000270ed252363b0be56a4", 
+                            "Gateway": "172.17.0.1", 
+                            "GlobalIPv6Address": "", 
+                            "GlobalIPv6PrefixLen": 0, 
+                            "IPAMConfig": null, 
+                            "IPAddress": "172.17.0.2", 
+                            "IPPrefixLen": 16, 
+                            "IPv6Gateway": "", 
+                            "Links": null, 
+                            "MacAddress": "02:42:ac:11:00:02", 
+                            "NetworkID": "5801fbad92c8ffe2864a5a9966e578f93380bbb57dae0cecb73214257a2c02a2"
+                        }
+                    }, 
+                    "Ports": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "SandboxID": "144ac58a8f8994978900b66b8e92a642c95552ac2161b2b66222976f59cafed9", 
+                    "SandboxKey": "/var/run/docker/netns/144ac58a8f89", 
+                    "SecondaryIPAddresses": null, 
+                    "SecondaryIPv6Addresses": null
+                }, 
+                "Path": "/usr/local/bin/etcd", 
+                "ProcessLabel": "", 
+                "ResolvConfPath": "/var/lib/docker/containers/f461b132be2e422eca667bfce140bf230d4d7144ff1f30643e5451b551eaf221/resolv.conf", 
+                "RestartCount": 0, 
+                "State": {
+                    "Dead": false, 
+                    "Error": "", 
+                    "ExitCode": 0, 
+                    "FinishedAt": "0001-01-01T00:00:00Z", 
+                    "OOMKilled": false, 
+                    "Paused": false, 
+                    "Pid": 30826, 
+                    "Restarting": false, 
+                    "Running": true, 
+                    "StartedAt": "2018-11-01T05:33:01.566032539Z", 
+                    "Status": "running"
+                }
+            }
+        }, 
+        "changed": true, 
+        "failed": false
+    }
+}
+2018-11-01 13:33:02,687 p=9940 u=yungshun |  ok: [10.236.1.3] => {
+    "run_etcd_cluster": {
+        "ansible_facts": {
+            "docker_container": {
+                "AppArmorProfile": "", 
+                "Args": [
+                    "--data-dir=/etcd-data", 
+                    "--name", 
+                    "etcd3", 
+                    "--initial-advertise-peer-urls", 
+                    "http://10.236.1.3:2380", 
+                    "--listen-peer-urls", 
+                    "http://0.0.0.0:2380", 
+                    "--advertise-client-urls", 
+                    "http://10.236.1.3:2379", 
+                    "--listen-client-urls", 
+                    "http://0.0.0.0:2379", 
+                    "--initial-cluster", 
+                    "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                    "--initial-cluster-state", 
+                    "new", 
+                    "--initial-cluster-token", 
+                    "etcd-cluster"
+                ], 
+                "Config": {
+                    "AttachStderr": false, 
+                    "AttachStdin": false, 
+                    "AttachStdout": false, 
+                    "Cmd": [
+                        "/usr/local/bin/etcd", 
+                        "--data-dir=/etcd-data", 
+                        "--name", 
+                        "etcd3", 
+                        "--initial-advertise-peer-urls", 
+                        "http://10.236.1.3:2380", 
+                        "--listen-peer-urls", 
+                        "http://0.0.0.0:2380", 
+                        "--advertise-client-urls", 
+                        "http://10.236.1.3:2379", 
+                        "--listen-client-urls", 
+                        "http://0.0.0.0:2379", 
+                        "--initial-cluster", 
+                        "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                        "--initial-cluster-state", 
+                        "new", 
+                        "--initial-cluster-token", 
+                        "etcd-cluster"
+                    ], 
+                    "Domainname": "", 
+                    "Entrypoint": null, 
+                    "Env": [
+                        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+                    ], 
+                    "ExposedPorts": {
+                        "2379/tcp": {}, 
+                        "2380/tcp": {}
+                    }, 
+                    "Hostname": "d19b8ef3fb34", 
+                    "Image": "gcr.io/etcd-development/etcd:latest", 
+                    "Labels": {}, 
+                    "OnBuild": null, 
+                    "OpenStdin": false, 
+                    "StdinOnce": false, 
+                    "Tty": false, 
+                    "User": "", 
+                    "Volumes": {
+                        "/etcd-data": {}
+                    }, 
+                    "WorkingDir": ""
+                }, 
+                "Created": "2018-11-01T05:32:37.420835625Z", 
+                "Driver": "aufs", 
+                "ExecIDs": null, 
+                "GraphDriver": {
+                    "Data": null, 
+                    "Name": "aufs"
+                }, 
+                "HostConfig": {
+                    "AutoRemove": false, 
+                    "Binds": [
+                        "/home/ccma/etcd:/etcd-data:rw"
+                    ], 
+                    "BlkioDeviceReadBps": null, 
+                    "BlkioDeviceReadIOps": null, 
+                    "BlkioDeviceWriteBps": null, 
+                    "BlkioDeviceWriteIOps": null, 
+                    "BlkioWeight": 0, 
+                    "BlkioWeightDevice": null, 
+                    "CapAdd": null, 
+                    "CapDrop": null, 
+                    "Cgroup": "", 
+                    "CgroupParent": "", 
+                    "ConsoleSize": [
+                        0, 
+                        0
+                    ], 
+                    "ContainerIDFile": "", 
+                    "CpuCount": 0, 
+                    "CpuPercent": 0, 
+                    "CpuPeriod": 0, 
+                    "CpuQuota": 0, 
+                    "CpuRealtimePeriod": 0, 
+                    "CpuRealtimeRuntime": 0, 
+                    "CpuShares": 0, 
+                    "CpusetCpus": "", 
+                    "CpusetMems": "", 
+                    "Devices": null, 
+                    "DiskQuota": 0, 
+                    "Dns": null, 
+                    "DnsOptions": null, 
+                    "DnsSearch": null, 
+                    "ExtraHosts": null, 
+                    "GroupAdd": null, 
+                    "IOMaximumBandwidth": 0, 
+                    "IOMaximumIOps": 0, 
+                    "Init": false, 
+                    "IpcMode": "", 
+                    "Isolation": "", 
+                    "KernelMemory": 0, 
+                    "Links": null, 
+                    "LogConfig": {
+                        "Config": {}, 
+                        "Type": "json-file"
+                    }, 
+                    "Memory": 0, 
+                    "MemoryReservation": 0, 
+                    "MemorySwap": 0, 
+                    "MemorySwappiness": -1, 
+                    "NanoCpus": 0, 
+                    "NetworkMode": "default", 
+                    "OomKillDisable": false, 
+                    "OomScoreAdj": 0, 
+                    "PidMode": "", 
+                    "PidsLimit": 0, 
+                    "PortBindings": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "Privileged": false, 
+                    "PublishAllPorts": false, 
+                    "ReadonlyRootfs": false, 
+                    "RestartPolicy": {
+                        "MaximumRetryCount": 0, 
+                        "Name": ""
+                    }, 
+                    "Runtime": "runc", 
+                    "SecurityOpt": null, 
+                    "ShmSize": 67108864, 
+                    "UTSMode": "", 
+                    "Ulimits": null, 
+                    "UsernsMode": "", 
+                    "VolumeDriver": "", 
+                    "VolumesFrom": null
+                }, 
+                "HostnamePath": "/var/lib/docker/containers/d19b8ef3fb34df538a5e764893ccf462ba1ded2653ea426c42bdfb677912b468/hostname", 
+                "HostsPath": "/var/lib/docker/containers/d19b8ef3fb34df538a5e764893ccf462ba1ded2653ea426c42bdfb677912b468/hosts", 
+                "Id": "d19b8ef3fb34df538a5e764893ccf462ba1ded2653ea426c42bdfb677912b468", 
+                "Image": "sha256:643c21638c1c966fe18ca1cc8547dd401df70e85d83ca6de76b9a7957703b993", 
+                "LogPath": "/var/lib/docker/containers/d19b8ef3fb34df538a5e764893ccf462ba1ded2653ea426c42bdfb677912b468/d19b8ef3fb34df538a5e764893ccf462ba1ded2653ea426c42bdfb677912b468-json.log", 
+                "MountLabel": "", 
+                "Mounts": [
+                    {
+                        "Destination": "/etcd-data", 
+                        "Mode": "rw", 
+                        "Propagation": "rprivate", 
+                        "RW": true, 
+                        "Source": "/home/ccma/etcd", 
+                        "Type": "bind"
+                    }
+                ], 
+                "Name": "/etcd", 
+                "NetworkSettings": {
+                    "Bridge": "", 
+                    "EndpointID": "cdde0b8a840d5efc07ca56cc31703dddfd61f0b151bb4e48604ca69fd6ac2336", 
+                    "Gateway": "172.17.0.1", 
+                    "GlobalIPv6Address": "", 
+                    "GlobalIPv6PrefixLen": 0, 
+                    "HairpinMode": false, 
+                    "IPAddress": "172.17.0.2", 
+                    "IPPrefixLen": 16, 
+                    "IPv6Gateway": "", 
+                    "LinkLocalIPv6Address": "", 
+                    "LinkLocalIPv6PrefixLen": 0, 
+                    "MacAddress": "02:42:ac:11:00:02", 
+                    "Networks": {
+                        "bridge": {
+                            "Aliases": null, 
+                            "EndpointID": "cdde0b8a840d5efc07ca56cc31703dddfd61f0b151bb4e48604ca69fd6ac2336", 
+                            "Gateway": "172.17.0.1", 
+                            "GlobalIPv6Address": "", 
+                            "GlobalIPv6PrefixLen": 0, 
+                            "IPAMConfig": null, 
+                            "IPAddress": "172.17.0.2", 
+                            "IPPrefixLen": 16, 
+                            "IPv6Gateway": "", 
+                            "Links": null, 
+                            "MacAddress": "02:42:ac:11:00:02", 
+                            "NetworkID": "f00e6b87317a9ba039bbbf3e7092ffa618b1b8d7783004ffaea0e149534185da"
+                        }
+                    }, 
+                    "Ports": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "SandboxID": "83ed8dc80400c25607051a5350b86a00e425ee19da34634601ec2b9a6b11dd55", 
+                    "SandboxKey": "/var/run/docker/netns/83ed8dc80400", 
+                    "SecondaryIPAddresses": null, 
+                    "SecondaryIPv6Addresses": null
+                }, 
+                "Path": "/usr/local/bin/etcd", 
+                "ProcessLabel": "", 
+                "ResolvConfPath": "/var/lib/docker/containers/d19b8ef3fb34df538a5e764893ccf462ba1ded2653ea426c42bdfb677912b468/resolv.conf", 
+                "RestartCount": 0, 
+                "State": {
+                    "Dead": false, 
+                    "Error": "", 
+                    "ExitCode": 0, 
+                    "FinishedAt": "0001-01-01T00:00:00Z", 
+                    "OOMKilled": false, 
+                    "Paused": false, 
+                    "Pid": 26696, 
+                    "Restarting": false, 
+                    "Running": true, 
+                    "StartedAt": "2018-11-01T05:33:01.774320036Z", 
+                    "Status": "running"
+                }
+            }
+        }, 
+        "changed": true, 
+        "failed": false
+    }
+}
+2018-11-01 13:33:02,715 p=9940 u=yungshun |  PLAY [etcd1] *******************************************************************
+2018-11-01 13:33:02,805 p=9940 u=yungshun |  TASK [Delete a network, disconnecting all containers] **************************
+2018-11-01 13:33:04,376 p=9940 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:33:04,591 p=9940 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:33:04,674 p=9940 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:33:04,744 p=9940 u=yungshun |  TASK [Create a network] ********************************************************
+2018-11-01 13:33:05,692 p=9940 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 13:33:05,731 p=9940 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 13:33:05,998 p=9940 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 13:33:06,000 p=9940 u=yungshun |  PLAY RECAP *********************************************************************
+2018-11-01 13:33:06,000 p=9940 u=yungshun |  10.236.1.1                 : ok=18   changed=8    unreachable=0    failed=0   
+2018-11-01 13:33:06,000 p=9940 u=yungshun |  10.236.1.2                 : ok=18   changed=8    unreachable=0    failed=0   
+2018-11-01 13:33:06,000 p=9940 u=yungshun |  10.236.1.3                 : ok=18   changed=8    unreachable=0    failed=0   
+2018-11-01 13:35:03,739 p=10748 u=yungshun |  PLAY [etcd] ********************************************************************
+2018-11-01 13:35:03,750 p=10748 u=yungshun |  TASK [Install Python 2.7] ******************************************************
+2018-11-01 13:35:05,107 p=10748 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:35:05,162 p=10748 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:35:05,163 p=10748 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:35:05,177 p=10748 u=yungshun |  TASK [Gather facts after Python is definitely present] *************************
+2018-11-01 13:35:06,387 p=10748 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:35:06,582 p=10748 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:35:06,645 p=10748 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:35:06,715 p=10748 u=yungshun |  TASK [Install pip and docker.io] ***********************************************
+2018-11-01 13:35:08,166 p=10748 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:35:08,187 p=10748 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:35:08,195 p=10748 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:35:08,268 p=10748 u=yungshun |  TASK [Install Docker Python library] *******************************************
+2018-11-01 13:35:09,938 p=10748 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:35:09,960 p=10748 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:35:09,968 p=10748 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:35:10,040 p=10748 u=yungshun |  TASK [Add ccma to the docker group] ********************************************
+2018-11-01 13:35:10,855 p=10748 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 13:35:10,860 p=10748 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 13:35:10,867 p=10748 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 13:35:10,941 p=10748 u=yungshun |  TASK [Reboot immediately if there was a change] ********************************
+2018-11-01 13:35:12,437 p=10748 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 13:35:12,565 p=10748 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 13:35:12,715 p=10748 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 13:35:12,779 p=10748 u=yungshun |  TASK [Wait for the reboot to complete if there was a change] *******************
+2018-11-01 13:35:19,700 p=10748 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:35:19,707 p=10748 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:35:19,765 p=10748 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:35:19,835 p=10748 u=yungshun |  TASK [Install pexpect] *********************************************************
+2018-11-01 13:35:21,136 p=10748 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:35:21,392 p=10748 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:35:21,493 p=10748 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:35:21,560 p=10748 u=yungshun |  TASK [Stop Docker engine] ******************************************************
+2018-11-01 13:35:22,901 p=10748 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 13:35:22,932 p=10748 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 13:35:22,967 p=10748 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 13:35:23,041 p=10748 u=yungshun |  TASK [Restart Docker engine with cluster configuration] ************************
+2018-11-01 13:35:23,606 p=10748 u=yungshun |  changed: [10.236.1.1] => (item=nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://10.236.1.1:2379 --cluster-advertise=10.236.1.1:2375 >/dev/null 2>&1 &)
+2018-11-01 13:35:23,856 p=10748 u=yungshun |  changed: [10.236.1.2] => (item=nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://10.236.1.2:2379 --cluster-advertise=10.236.1.2:2375 >/dev/null 2>&1 &)
+2018-11-01 13:35:24,022 p=10748 u=yungshun |  changed: [10.236.1.3] => (item=nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://10.236.1.3:2379 --cluster-advertise=10.236.1.3:2375 >/dev/null 2>&1 &)
+2018-11-01 13:35:24,084 p=10748 u=yungshun |  TASK [Create a directory for mounting host volume] *****************************
+2018-11-01 13:35:25,115 p=10748 u=yungshun |  ok: [10.236.1.3]
+2018-11-01 13:35:25,122 p=10748 u=yungshun |  ok: [10.236.1.2]
+2018-11-01 13:35:25,131 p=10748 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:35:25,206 p=10748 u=yungshun |  TASK [Check for containers that actually exist] ********************************
+2018-11-01 13:35:25,788 p=10748 u=yungshun |  changed: [10.236.1.1] => (item=etcd)
+2018-11-01 13:35:25,920 p=10748 u=yungshun |  changed: [10.236.1.2] => (item=etcd)
+2018-11-01 13:35:26,101 p=10748 u=yungshun |  changed: [10.236.1.3] => (item=etcd)
+2018-11-01 13:35:26,175 p=10748 u=yungshun |  TASK [Remove the containers found by the above command] ************************
+2018-11-01 13:35:27,212 p=10748 u=yungshun |  changed: [10.236.1.1] => (item={'_ansible_parsed': True, 'stderr_lines': [], u'changed': True, u'stdout': u'fa9d3e33868a', '_ansible_item_result': True, u'delta': u'0:00:00.019140', 'stdout_lines': [u'fa9d3e33868a'], '_ansible_item_label': u'etcd', u'end': u'2018-11-01 13:35:25.694834', '_ansible_no_log': False, 'failed': False, u'cmd': u'docker ps -aq --filter "name=etcd"', 'item': u'etcd', u'stderr': u'', u'rc': 0, u'invocation': {u'module_args': {u'warn': True, u'executable': None, u'_uses_shell': True, u'_raw_params': u'docker ps -aq --filter "name=etcd"', u'removes': None, u'argv': None, u'creates': None, u'chdir': None, u'stdin': None}}, u'start': u'2018-11-01 13:35:25.675694', '_ansible_ignore_errors': None})
+2018-11-01 13:35:27,540 p=10748 u=yungshun |  changed: [10.236.1.3] => (item={'_ansible_parsed': True, 'stderr_lines': [], u'changed': True, u'stdout': u'd19b8ef3fb34', '_ansible_item_result': True, u'delta': u'0:00:00.017757', 'stdout_lines': [u'd19b8ef3fb34'], '_ansible_item_label': u'etcd', u'end': u'2018-11-01 13:35:26.023298', '_ansible_no_log': False, 'failed': False, u'cmd': u'docker ps -aq --filter "name=etcd"', 'item': u'etcd', u'stderr': u'', u'rc': 0, u'invocation': {u'module_args': {u'warn': True, u'executable': None, u'_uses_shell': True, u'_raw_params': u'docker ps -aq --filter "name=etcd"', u'removes': None, u'argv': None, u'creates': None, u'chdir': None, u'stdin': None}}, u'start': u'2018-11-01 13:35:26.005541', '_ansible_ignore_errors': None})
+2018-11-01 13:35:34,332 p=10748 u=yungshun |  changed: [10.236.1.2] => (item={'_ansible_parsed': True, 'stderr_lines': [], u'changed': True, u'stdout': u'f461b132be2e', '_ansible_item_result': True, u'delta': u'0:00:00.013397', 'stdout_lines': [u'f461b132be2e'], '_ansible_item_label': u'etcd', u'end': u'2018-11-01 13:35:25.831911', '_ansible_no_log': False, 'failed': False, u'cmd': u'docker ps -aq --filter "name=etcd"', 'item': u'etcd', u'stderr': u'', u'rc': 0, u'invocation': {u'module_args': {u'warn': True, u'executable': None, u'_uses_shell': True, u'_raw_params': u'docker ps -aq --filter "name=etcd"', u'removes': None, u'argv': None, u'creates': None, u'chdir': None, u'stdin': None}}, u'start': u'2018-11-01 13:35:25.818514', '_ansible_ignore_errors': None})
+2018-11-01 13:35:34,423 p=10748 u=yungshun |  TASK [Debug] *******************************************************************
+2018-11-01 13:35:34,771 p=10748 u=yungshun |  ok: [10.236.1.1] => {
+    "hostvars[inventory_hostname]['etcd_name']": "etcd1"
+}
+2018-11-01 13:35:34,863 p=10748 u=yungshun |  ok: [10.236.1.2] => {
+    "hostvars[inventory_hostname]['etcd_name']": "etcd2"
+}
+2018-11-01 13:35:34,957 p=10748 u=yungshun |  ok: [10.236.1.3] => {
+    "hostvars[inventory_hostname]['etcd_name']": "etcd3"
+}
+2018-11-01 13:35:35,025 p=10748 u=yungshun |  TASK [Run a 3 node etcd cluster] ***********************************************
+2018-11-01 13:35:37,048 p=10748 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 13:35:58,839 p=10748 u=yungshun |  changed: [10.236.1.3]
+2018-11-01 13:36:00,832 p=10748 u=yungshun |  changed: [10.236.1.2]
+2018-11-01 13:36:00,915 p=10748 u=yungshun |  TASK [Debug run_etcd_cluster] **************************************************
+2018-11-01 13:36:01,067 p=10748 u=yungshun |  ok: [10.236.1.1] => {
+    "run_etcd_cluster": {
+        "ansible_facts": {
+            "docker_container": {
+                "AppArmorProfile": "", 
+                "Args": [
+                    "--data-dir=/etcd-data", 
+                    "--name", 
+                    "etcd1", 
+                    "--initial-advertise-peer-urls", 
+                    "http://10.236.1.1:2380", 
+                    "--listen-peer-urls", 
+                    "http://0.0.0.0:2380", 
+                    "--advertise-client-urls", 
+                    "http://10.236.1.1:2379", 
+                    "--listen-client-urls", 
+                    "http://0.0.0.0:2379", 
+                    "--initial-cluster", 
+                    "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                    "--initial-cluster-state", 
+                    "new", 
+                    "--initial-cluster-token", 
+                    "etcd-cluster"
+                ], 
+                "Config": {
+                    "AttachStderr": false, 
+                    "AttachStdin": false, 
+                    "AttachStdout": false, 
+                    "Cmd": [
+                        "/usr/local/bin/etcd", 
+                        "--data-dir=/etcd-data", 
+                        "--name", 
+                        "etcd1", 
+                        "--initial-advertise-peer-urls", 
+                        "http://10.236.1.1:2380", 
+                        "--listen-peer-urls", 
+                        "http://0.0.0.0:2380", 
+                        "--advertise-client-urls", 
+                        "http://10.236.1.1:2379", 
+                        "--listen-client-urls", 
+                        "http://0.0.0.0:2379", 
+                        "--initial-cluster", 
+                        "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                        "--initial-cluster-state", 
+                        "new", 
+                        "--initial-cluster-token", 
+                        "etcd-cluster"
+                    ], 
+                    "Domainname": "", 
+                    "Entrypoint": null, 
+                    "Env": [
+                        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+                    ], 
+                    "ExposedPorts": {
+                        "2379/tcp": {}, 
+                        "2380/tcp": {}
+                    }, 
+                    "Hostname": "a183bd870d92", 
+                    "Image": "gcr.io/etcd-development/etcd:latest", 
+                    "Labels": {}, 
+                    "OnBuild": null, 
+                    "OpenStdin": false, 
+                    "StdinOnce": false, 
+                    "Tty": false, 
+                    "User": "", 
+                    "Volumes": {
+                        "/etcd-data": {}
+                    }, 
+                    "WorkingDir": ""
+                }, 
+                "Created": "2018-11-01T05:35:36.073212036Z", 
+                "Driver": "aufs", 
+                "ExecIDs": null, 
+                "GraphDriver": {
+                    "Data": null, 
+                    "Name": "aufs"
+                }, 
+                "HostConfig": {
+                    "AutoRemove": false, 
+                    "Binds": [
+                        "/home/ccma/etcd:/etcd-data:rw"
+                    ], 
+                    "BlkioDeviceReadBps": null, 
+                    "BlkioDeviceReadIOps": null, 
+                    "BlkioDeviceWriteBps": null, 
+                    "BlkioDeviceWriteIOps": null, 
+                    "BlkioWeight": 0, 
+                    "BlkioWeightDevice": null, 
+                    "CapAdd": null, 
+                    "CapDrop": null, 
+                    "Cgroup": "", 
+                    "CgroupParent": "", 
+                    "ConsoleSize": [
+                        0, 
+                        0
+                    ], 
+                    "ContainerIDFile": "", 
+                    "CpuCount": 0, 
+                    "CpuPercent": 0, 
+                    "CpuPeriod": 0, 
+                    "CpuQuota": 0, 
+                    "CpuRealtimePeriod": 0, 
+                    "CpuRealtimeRuntime": 0, 
+                    "CpuShares": 0, 
+                    "CpusetCpus": "", 
+                    "CpusetMems": "", 
+                    "Devices": null, 
+                    "DiskQuota": 0, 
+                    "Dns": null, 
+                    "DnsOptions": null, 
+                    "DnsSearch": null, 
+                    "ExtraHosts": null, 
+                    "GroupAdd": null, 
+                    "IOMaximumBandwidth": 0, 
+                    "IOMaximumIOps": 0, 
+                    "Init": false, 
+                    "IpcMode": "", 
+                    "Isolation": "", 
+                    "KernelMemory": 0, 
+                    "Links": null, 
+                    "LogConfig": {
+                        "Config": {}, 
+                        "Type": "json-file"
+                    }, 
+                    "Memory": 0, 
+                    "MemoryReservation": 0, 
+                    "MemorySwap": 0, 
+                    "MemorySwappiness": -1, 
+                    "NanoCpus": 0, 
+                    "NetworkMode": "default", 
+                    "OomKillDisable": false, 
+                    "OomScoreAdj": 0, 
+                    "PidMode": "", 
+                    "PidsLimit": 0, 
+                    "PortBindings": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "Privileged": false, 
+                    "PublishAllPorts": false, 
+                    "ReadonlyRootfs": false, 
+                    "RestartPolicy": {
+                        "MaximumRetryCount": 0, 
+                        "Name": ""
+                    }, 
+                    "Runtime": "runc", 
+                    "SecurityOpt": null, 
+                    "ShmSize": 67108864, 
+                    "UTSMode": "", 
+                    "Ulimits": null, 
+                    "UsernsMode": "", 
+                    "VolumeDriver": "", 
+                    "VolumesFrom": null
+                }, 
+                "HostnamePath": "/var/lib/docker/containers/a183bd870d92dd2dd83647d5c38abd380b0179615aaa554952bd3fec9282443e/hostname", 
+                "HostsPath": "/var/lib/docker/containers/a183bd870d92dd2dd83647d5c38abd380b0179615aaa554952bd3fec9282443e/hosts", 
+                "Id": "a183bd870d92dd2dd83647d5c38abd380b0179615aaa554952bd3fec9282443e", 
+                "Image": "sha256:643c21638c1c966fe18ca1cc8547dd401df70e85d83ca6de76b9a7957703b993", 
+                "LogPath": "/var/lib/docker/containers/a183bd870d92dd2dd83647d5c38abd380b0179615aaa554952bd3fec9282443e/a183bd870d92dd2dd83647d5c38abd380b0179615aaa554952bd3fec9282443e-json.log", 
+                "MountLabel": "", 
+                "Mounts": [
+                    {
+                        "Destination": "/etcd-data", 
+                        "Mode": "rw", 
+                        "Propagation": "rprivate", 
+                        "RW": true, 
+                        "Source": "/home/ccma/etcd", 
+                        "Type": "bind"
+                    }
+                ], 
+                "Name": "/etcd", 
+                "NetworkSettings": {
+                    "Bridge": "", 
+                    "EndpointID": "4e6fe27a536ea53d7dbe83e7387b7d9355e4dc6ed78cc3e93b0c894a57e07c03", 
+                    "Gateway": "172.17.0.1", 
+                    "GlobalIPv6Address": "", 
+                    "GlobalIPv6PrefixLen": 0, 
+                    "HairpinMode": false, 
+                    "IPAddress": "172.17.0.2", 
+                    "IPPrefixLen": 16, 
+                    "IPv6Gateway": "", 
+                    "LinkLocalIPv6Address": "", 
+                    "LinkLocalIPv6PrefixLen": 0, 
+                    "MacAddress": "02:42:ac:11:00:02", 
+                    "Networks": {
+                        "bridge": {
+                            "Aliases": null, 
+                            "EndpointID": "4e6fe27a536ea53d7dbe83e7387b7d9355e4dc6ed78cc3e93b0c894a57e07c03", 
+                            "Gateway": "172.17.0.1", 
+                            "GlobalIPv6Address": "", 
+                            "GlobalIPv6PrefixLen": 0, 
+                            "IPAMConfig": null, 
+                            "IPAddress": "172.17.0.2", 
+                            "IPPrefixLen": 16, 
+                            "IPv6Gateway": "", 
+                            "Links": null, 
+                            "MacAddress": "02:42:ac:11:00:02", 
+                            "NetworkID": "257a2e393f2cb46831636aef37ac7f8f48b068c0a8937a34aa735f25b18e603c"
+                        }
+                    }, 
+                    "Ports": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "SandboxID": "2205e6c2c8708b122af01460e90167c89d2b909c4c16d84102acb4cf45a61a55", 
+                    "SandboxKey": "/var/run/docker/netns/2205e6c2c870", 
+                    "SecondaryIPAddresses": null, 
+                    "SecondaryIPv6Addresses": null
+                }, 
+                "Path": "/usr/local/bin/etcd", 
+                "ProcessLabel": "", 
+                "ResolvConfPath": "/var/lib/docker/containers/a183bd870d92dd2dd83647d5c38abd380b0179615aaa554952bd3fec9282443e/resolv.conf", 
+                "RestartCount": 0, 
+                "State": {
+                    "Dead": false, 
+                    "Error": "", 
+                    "ExitCode": 0, 
+                    "FinishedAt": "0001-01-01T00:00:00Z", 
+                    "OOMKilled": false, 
+                    "Paused": false, 
+                    "Pid": 15885, 
+                    "Restarting": false, 
+                    "Running": true, 
+                    "StartedAt": "2018-11-01T05:35:36.907102437Z", 
+                    "Status": "running"
+                }
+            }
+        }, 
+        "changed": true, 
+        "failed": false
+    }
+}
+2018-11-01 13:36:01,212 p=10748 u=yungshun |  ok: [10.236.1.2] => {
+    "run_etcd_cluster": {
+        "ansible_facts": {
+            "docker_container": {
+                "AppArmorProfile": "", 
+                "Args": [
+                    "--data-dir=/etcd-data", 
+                    "--name", 
+                    "etcd2", 
+                    "--initial-advertise-peer-urls", 
+                    "http://10.236.1.2:2380", 
+                    "--listen-peer-urls", 
+                    "http://0.0.0.0:2380", 
+                    "--advertise-client-urls", 
+                    "http://10.236.1.2:2379", 
+                    "--listen-client-urls", 
+                    "http://0.0.0.0:2379", 
+                    "--initial-cluster", 
+                    "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                    "--initial-cluster-state", 
+                    "new", 
+                    "--initial-cluster-token", 
+                    "etcd-cluster"
+                ], 
+                "Config": {
+                    "AttachStderr": false, 
+                    "AttachStdin": false, 
+                    "AttachStdout": false, 
+                    "Cmd": [
+                        "/usr/local/bin/etcd", 
+                        "--data-dir=/etcd-data", 
+                        "--name", 
+                        "etcd2", 
+                        "--initial-advertise-peer-urls", 
+                        "http://10.236.1.2:2380", 
+                        "--listen-peer-urls", 
+                        "http://0.0.0.0:2380", 
+                        "--advertise-client-urls", 
+                        "http://10.236.1.2:2379", 
+                        "--listen-client-urls", 
+                        "http://0.0.0.0:2379", 
+                        "--initial-cluster", 
+                        "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                        "--initial-cluster-state", 
+                        "new", 
+                        "--initial-cluster-token", 
+                        "etcd-cluster"
+                    ], 
+                    "Domainname": "", 
+                    "Entrypoint": null, 
+                    "Env": [
+                        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+                    ], 
+                    "ExposedPorts": {
+                        "2379/tcp": {}, 
+                        "2380/tcp": {}
+                    }, 
+                    "Hostname": "3d2e77bbbfdc", 
+                    "Image": "gcr.io/etcd-development/etcd:latest", 
+                    "Labels": {}, 
+                    "OnBuild": null, 
+                    "OpenStdin": false, 
+                    "StdinOnce": false, 
+                    "Tty": false, 
+                    "User": "", 
+                    "Volumes": {
+                        "/etcd-data": {}
+                    }, 
+                    "WorkingDir": ""
+                }, 
+                "Created": "2018-11-01T05:35:36.0677948Z", 
+                "Driver": "aufs", 
+                "ExecIDs": null, 
+                "GraphDriver": {
+                    "Data": null, 
+                    "Name": "aufs"
+                }, 
+                "HostConfig": {
+                    "AutoRemove": false, 
+                    "Binds": [
+                        "/home/ccma/etcd:/etcd-data:rw"
+                    ], 
+                    "BlkioDeviceReadBps": null, 
+                    "BlkioDeviceReadIOps": null, 
+                    "BlkioDeviceWriteBps": null, 
+                    "BlkioDeviceWriteIOps": null, 
+                    "BlkioWeight": 0, 
+                    "BlkioWeightDevice": null, 
+                    "CapAdd": null, 
+                    "CapDrop": null, 
+                    "Cgroup": "", 
+                    "CgroupParent": "", 
+                    "ConsoleSize": [
+                        0, 
+                        0
+                    ], 
+                    "ContainerIDFile": "", 
+                    "CpuCount": 0, 
+                    "CpuPercent": 0, 
+                    "CpuPeriod": 0, 
+                    "CpuQuota": 0, 
+                    "CpuRealtimePeriod": 0, 
+                    "CpuRealtimeRuntime": 0, 
+                    "CpuShares": 0, 
+                    "CpusetCpus": "", 
+                    "CpusetMems": "", 
+                    "Devices": null, 
+                    "DiskQuota": 0, 
+                    "Dns": null, 
+                    "DnsOptions": null, 
+                    "DnsSearch": null, 
+                    "ExtraHosts": null, 
+                    "GroupAdd": null, 
+                    "IOMaximumBandwidth": 0, 
+                    "IOMaximumIOps": 0, 
+                    "Init": false, 
+                    "IpcMode": "", 
+                    "Isolation": "", 
+                    "KernelMemory": 0, 
+                    "Links": null, 
+                    "LogConfig": {
+                        "Config": {}, 
+                        "Type": "json-file"
+                    }, 
+                    "Memory": 0, 
+                    "MemoryReservation": 0, 
+                    "MemorySwap": 0, 
+                    "MemorySwappiness": -1, 
+                    "NanoCpus": 0, 
+                    "NetworkMode": "default", 
+                    "OomKillDisable": false, 
+                    "OomScoreAdj": 0, 
+                    "PidMode": "", 
+                    "PidsLimit": 0, 
+                    "PortBindings": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "Privileged": false, 
+                    "PublishAllPorts": false, 
+                    "ReadonlyRootfs": false, 
+                    "RestartPolicy": {
+                        "MaximumRetryCount": 0, 
+                        "Name": ""
+                    }, 
+                    "Runtime": "runc", 
+                    "SecurityOpt": null, 
+                    "ShmSize": 67108864, 
+                    "UTSMode": "", 
+                    "Ulimits": null, 
+                    "UsernsMode": "", 
+                    "VolumeDriver": "", 
+                    "VolumesFrom": null
+                }, 
+                "HostnamePath": "/var/lib/docker/containers/3d2e77bbbfdc9c6c4c8cc310c521007aa293b2f1046d8d1c5b2883959cc9645f/hostname", 
+                "HostsPath": "/var/lib/docker/containers/3d2e77bbbfdc9c6c4c8cc310c521007aa293b2f1046d8d1c5b2883959cc9645f/hosts", 
+                "Id": "3d2e77bbbfdc9c6c4c8cc310c521007aa293b2f1046d8d1c5b2883959cc9645f", 
+                "Image": "sha256:643c21638c1c966fe18ca1cc8547dd401df70e85d83ca6de76b9a7957703b993", 
+                "LogPath": "/var/lib/docker/containers/3d2e77bbbfdc9c6c4c8cc310c521007aa293b2f1046d8d1c5b2883959cc9645f/3d2e77bbbfdc9c6c4c8cc310c521007aa293b2f1046d8d1c5b2883959cc9645f-json.log", 
+                "MountLabel": "", 
+                "Mounts": [
+                    {
+                        "Destination": "/etcd-data", 
+                        "Mode": "rw", 
+                        "Propagation": "rprivate", 
+                        "RW": true, 
+                        "Source": "/home/ccma/etcd", 
+                        "Type": "bind"
+                    }
+                ], 
+                "Name": "/etcd", 
+                "NetworkSettings": {
+                    "Bridge": "", 
+                    "EndpointID": "ef19c12dcefe7206850b60bb56d8dcea69d11670076bbdf56ace7776baf9b8fd", 
+                    "Gateway": "172.17.0.1", 
+                    "GlobalIPv6Address": "", 
+                    "GlobalIPv6PrefixLen": 0, 
+                    "HairpinMode": false, 
+                    "IPAddress": "172.17.0.2", 
+                    "IPPrefixLen": 16, 
+                    "IPv6Gateway": "", 
+                    "LinkLocalIPv6Address": "", 
+                    "LinkLocalIPv6PrefixLen": 0, 
+                    "MacAddress": "02:42:ac:11:00:02", 
+                    "Networks": {
+                        "bridge": {
+                            "Aliases": null, 
+                            "EndpointID": "ef19c12dcefe7206850b60bb56d8dcea69d11670076bbdf56ace7776baf9b8fd", 
+                            "Gateway": "172.17.0.1", 
+                            "GlobalIPv6Address": "", 
+                            "GlobalIPv6PrefixLen": 0, 
+                            "IPAMConfig": null, 
+                            "IPAddress": "172.17.0.2", 
+                            "IPPrefixLen": 16, 
+                            "IPv6Gateway": "", 
+                            "Links": null, 
+                            "MacAddress": "02:42:ac:11:00:02", 
+                            "NetworkID": "5801fbad92c8ffe2864a5a9966e578f93380bbb57dae0cecb73214257a2c02a2"
+                        }
+                    }, 
+                    "Ports": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "SandboxID": "29cb846582e6fda0f2fb5224821bfbb75f87841f5ce7e1dcd71caa12f6561ab8", 
+                    "SandboxKey": "/var/run/docker/netns/29cb846582e6", 
+                    "SecondaryIPAddresses": null, 
+                    "SecondaryIPv6Addresses": null
+                }, 
+                "Path": "/usr/local/bin/etcd", 
+                "ProcessLabel": "", 
+                "ResolvConfPath": "/var/lib/docker/containers/3d2e77bbbfdc9c6c4c8cc310c521007aa293b2f1046d8d1c5b2883959cc9645f/resolv.conf", 
+                "RestartCount": 0, 
+                "State": {
+                    "Dead": false, 
+                    "Error": "", 
+                    "ExitCode": 0, 
+                    "FinishedAt": "0001-01-01T00:00:00Z", 
+                    "OOMKilled": false, 
+                    "Paused": false, 
+                    "Pid": 31538, 
+                    "Restarting": false, 
+                    "Running": true, 
+                    "StartedAt": "2018-11-01T05:36:00.679544213Z", 
+                    "Status": "running"
+                }
+            }
+        }, 
+        "changed": true, 
+        "failed": false
+    }
+}
+2018-11-01 13:36:01,303 p=10748 u=yungshun |  ok: [10.236.1.3] => {
+    "run_etcd_cluster": {
+        "ansible_facts": {
+            "docker_container": {
+                "AppArmorProfile": "", 
+                "Args": [
+                    "--data-dir=/etcd-data", 
+                    "--name", 
+                    "etcd3", 
+                    "--initial-advertise-peer-urls", 
+                    "http://10.236.1.3:2380", 
+                    "--listen-peer-urls", 
+                    "http://0.0.0.0:2380", 
+                    "--advertise-client-urls", 
+                    "http://10.236.1.3:2379", 
+                    "--listen-client-urls", 
+                    "http://0.0.0.0:2379", 
+                    "--initial-cluster", 
+                    "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                    "--initial-cluster-state", 
+                    "new", 
+                    "--initial-cluster-token", 
+                    "etcd-cluster"
+                ], 
+                "Config": {
+                    "AttachStderr": false, 
+                    "AttachStdin": false, 
+                    "AttachStdout": false, 
+                    "Cmd": [
+                        "/usr/local/bin/etcd", 
+                        "--data-dir=/etcd-data", 
+                        "--name", 
+                        "etcd3", 
+                        "--initial-advertise-peer-urls", 
+                        "http://10.236.1.3:2380", 
+                        "--listen-peer-urls", 
+                        "http://0.0.0.0:2380", 
+                        "--advertise-client-urls", 
+                        "http://10.236.1.3:2379", 
+                        "--listen-client-urls", 
+                        "http://0.0.0.0:2379", 
+                        "--initial-cluster", 
+                        "etcd1=http://10.236.1.1:2380,etcd2=http://10.236.1.2:2380,etcd3=http://10.236.1.3:2380", 
+                        "--initial-cluster-state", 
+                        "new", 
+                        "--initial-cluster-token", 
+                        "etcd-cluster"
+                    ], 
+                    "Domainname": "", 
+                    "Entrypoint": null, 
+                    "Env": [
+                        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+                    ], 
+                    "ExposedPorts": {
+                        "2379/tcp": {}, 
+                        "2380/tcp": {}
+                    }, 
+                    "Hostname": "022236e62369", 
+                    "Image": "gcr.io/etcd-development/etcd:latest", 
+                    "Labels": {}, 
+                    "OnBuild": null, 
+                    "OpenStdin": false, 
+                    "StdinOnce": false, 
+                    "Tty": false, 
+                    "User": "", 
+                    "Volumes": {
+                        "/etcd-data": {}
+                    }, 
+                    "WorkingDir": ""
+                }, 
+                "Created": "2018-11-01T05:35:36.06989069Z", 
+                "Driver": "aufs", 
+                "ExecIDs": null, 
+                "GraphDriver": {
+                    "Data": null, 
+                    "Name": "aufs"
+                }, 
+                "HostConfig": {
+                    "AutoRemove": false, 
+                    "Binds": [
+                        "/home/ccma/etcd:/etcd-data:rw"
+                    ], 
+                    "BlkioDeviceReadBps": null, 
+                    "BlkioDeviceReadIOps": null, 
+                    "BlkioDeviceWriteBps": null, 
+                    "BlkioDeviceWriteIOps": null, 
+                    "BlkioWeight": 0, 
+                    "BlkioWeightDevice": null, 
+                    "CapAdd": null, 
+                    "CapDrop": null, 
+                    "Cgroup": "", 
+                    "CgroupParent": "", 
+                    "ConsoleSize": [
+                        0, 
+                        0
+                    ], 
+                    "ContainerIDFile": "", 
+                    "CpuCount": 0, 
+                    "CpuPercent": 0, 
+                    "CpuPeriod": 0, 
+                    "CpuQuota": 0, 
+                    "CpuRealtimePeriod": 0, 
+                    "CpuRealtimeRuntime": 0, 
+                    "CpuShares": 0, 
+                    "CpusetCpus": "", 
+                    "CpusetMems": "", 
+                    "Devices": null, 
+                    "DiskQuota": 0, 
+                    "Dns": null, 
+                    "DnsOptions": null, 
+                    "DnsSearch": null, 
+                    "ExtraHosts": null, 
+                    "GroupAdd": null, 
+                    "IOMaximumBandwidth": 0, 
+                    "IOMaximumIOps": 0, 
+                    "Init": false, 
+                    "IpcMode": "", 
+                    "Isolation": "", 
+                    "KernelMemory": 0, 
+                    "Links": null, 
+                    "LogConfig": {
+                        "Config": {}, 
+                        "Type": "json-file"
+                    }, 
+                    "Memory": 0, 
+                    "MemoryReservation": 0, 
+                    "MemorySwap": 0, 
+                    "MemorySwappiness": -1, 
+                    "NanoCpus": 0, 
+                    "NetworkMode": "default", 
+                    "OomKillDisable": false, 
+                    "OomScoreAdj": 0, 
+                    "PidMode": "", 
+                    "PidsLimit": 0, 
+                    "PortBindings": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "Privileged": false, 
+                    "PublishAllPorts": false, 
+                    "ReadonlyRootfs": false, 
+                    "RestartPolicy": {
+                        "MaximumRetryCount": 0, 
+                        "Name": ""
+                    }, 
+                    "Runtime": "runc", 
+                    "SecurityOpt": null, 
+                    "ShmSize": 67108864, 
+                    "UTSMode": "", 
+                    "Ulimits": null, 
+                    "UsernsMode": "", 
+                    "VolumeDriver": "", 
+                    "VolumesFrom": null
+                }, 
+                "HostnamePath": "/var/lib/docker/containers/022236e62369ef514277955003b6b12906ad58592994622e344911273b550c65/hostname", 
+                "HostsPath": "/var/lib/docker/containers/022236e62369ef514277955003b6b12906ad58592994622e344911273b550c65/hosts", 
+                "Id": "022236e62369ef514277955003b6b12906ad58592994622e344911273b550c65", 
+                "Image": "sha256:643c21638c1c966fe18ca1cc8547dd401df70e85d83ca6de76b9a7957703b993", 
+                "LogPath": "/var/lib/docker/containers/022236e62369ef514277955003b6b12906ad58592994622e344911273b550c65/022236e62369ef514277955003b6b12906ad58592994622e344911273b550c65-json.log", 
+                "MountLabel": "", 
+                "Mounts": [
+                    {
+                        "Destination": "/etcd-data", 
+                        "Mode": "rw", 
+                        "Propagation": "rprivate", 
+                        "RW": true, 
+                        "Source": "/home/ccma/etcd", 
+                        "Type": "bind"
+                    }
+                ], 
+                "Name": "/etcd", 
+                "NetworkSettings": {
+                    "Bridge": "", 
+                    "EndpointID": "43ef1df0099a105e654e5db6abc1b050d8b73c1dd50b4b71f37f4837b966cff0", 
+                    "Gateway": "172.17.0.1", 
+                    "GlobalIPv6Address": "", 
+                    "GlobalIPv6PrefixLen": 0, 
+                    "HairpinMode": false, 
+                    "IPAddress": "172.17.0.2", 
+                    "IPPrefixLen": 16, 
+                    "IPv6Gateway": "", 
+                    "LinkLocalIPv6Address": "", 
+                    "LinkLocalIPv6PrefixLen": 0, 
+                    "MacAddress": "02:42:ac:11:00:02", 
+                    "Networks": {
+                        "bridge": {
+                            "Aliases": null, 
+                            "EndpointID": "43ef1df0099a105e654e5db6abc1b050d8b73c1dd50b4b71f37f4837b966cff0", 
+                            "Gateway": "172.17.0.1", 
+                            "GlobalIPv6Address": "", 
+                            "GlobalIPv6PrefixLen": 0, 
+                            "IPAMConfig": null, 
+                            "IPAddress": "172.17.0.2", 
+                            "IPPrefixLen": 16, 
+                            "IPv6Gateway": "", 
+                            "Links": null, 
+                            "MacAddress": "02:42:ac:11:00:02", 
+                            "NetworkID": "f00e6b87317a9ba039bbbf3e7092ffa618b1b8d7783004ffaea0e149534185da"
+                        }
+                    }, 
+                    "Ports": {
+                        "2379/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2379"
+                            }
+                        ], 
+                        "2380/tcp": [
+                            {
+                                "HostIp": "0.0.0.0", 
+                                "HostPort": "2380"
+                            }
+                        ]
+                    }, 
+                    "SandboxID": "94685804615b981bbd597ac36e5a8061b8f455f9eb31d4b5a334a42cf40bb2f3", 
+                    "SandboxKey": "/var/run/docker/netns/94685804615b", 
+                    "SecondaryIPAddresses": null, 
+                    "SecondaryIPv6Addresses": null
+                }, 
+                "Path": "/usr/local/bin/etcd", 
+                "ProcessLabel": "", 
+                "ResolvConfPath": "/var/lib/docker/containers/022236e62369ef514277955003b6b12906ad58592994622e344911273b550c65/resolv.conf", 
+                "RestartCount": 0, 
+                "State": {
+                    "Dead": false, 
+                    "Error": "", 
+                    "ExitCode": 0, 
+                    "FinishedAt": "0001-01-01T00:00:00Z", 
+                    "OOMKilled": false, 
+                    "Paused": false, 
+                    "Pid": 27368, 
+                    "Restarting": false, 
+                    "Running": true, 
+                    "StartedAt": "2018-11-01T05:35:58.700563661Z", 
+                    "Status": "running"
+                }
+            }
+        }, 
+        "changed": true, 
+        "failed": false
+    }
+}
+2018-11-01 13:36:01,319 p=10748 u=yungshun |  PLAY [etcd1] *******************************************************************
+2018-11-01 13:36:01,394 p=10748 u=yungshun |  TASK [Delete a network, disconnecting all containers] **************************
+2018-11-01 13:36:02,378 p=10748 u=yungshun |  ok: [10.236.1.1]
+2018-11-01 13:36:02,456 p=10748 u=yungshun |  TASK [Create a network] ********************************************************
+2018-11-01 13:36:03,166 p=10748 u=yungshun |  changed: [10.236.1.1]
+2018-11-01 13:36:03,167 p=10748 u=yungshun |  PLAY RECAP *********************************************************************
+2018-11-01 13:36:03,168 p=10748 u=yungshun |  10.236.1.1                 : ok=18   changed=8    unreachable=0    failed=0   
+2018-11-01 13:36:03,168 p=10748 u=yungshun |  10.236.1.2                 : ok=16   changed=7    unreachable=0    failed=0   
+2018-11-01 13:36:03,168 p=10748 u=yungshun |  10.236.1.3                 : ok=16   changed=7    unreachable=0    failed=0   

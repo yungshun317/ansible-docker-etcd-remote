@@ -72,9 +72,6 @@
       with_items:
         - "nohup /usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock --cluster-store=etcd://{{ ansible_default_ipv4.address }}:2379 --cluster-advertise={{ ansible_default_ipv4.address }}:2375 >/dev/null 2>&1 &"
 
-    - name: Create a network
-      become: yes
-      shell: "docker network create -d overlay network_etcd"
 
     - name: Create a directory for mounting host volume
       file:
@@ -130,3 +127,21 @@
       debug:
         var: run_etcd_cluster
 
+
+- name: etcd1
+  hosts: etcd1
+  gather_facts: no
+
+  vars:
+    ansible_become_pass: "ccma"
+
+  tasks:
+    - name: Delete a network, disconnecting all containers
+      docker_network:
+        name: network_etcd
+        state: absent
+        force: yes
+
+    - name: Create a network
+      become: yes
+      shell: "docker network create -d overlay network_etcd"
