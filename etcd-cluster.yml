@@ -145,3 +145,11 @@
     - name: Create a network
       become: yes
       shell: "docker network create -d overlay network_etcd"
+
+    - name: Check the network list 
+      shell: "docker network ls"
+      register: docker_network_ls
+
+    - name: Debug docker_network_ls
+      debug:
+        var: docker_network_ls 
